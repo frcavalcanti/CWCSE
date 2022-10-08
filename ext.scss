@@ -1,0 +1,147 @@
+body {
+  background-color: #252525;
+}
+
+// [[ -- LEFT NAVBAR -- ]]
+#nav {
+  position: absolute;
+  left: 0;
+  top: 35%;
+
+  a {
+    text-decoration: none;
+  }
+
+  .fa-solid {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+
+  }
+
+  ul li {
+    position: relative;
+    width: 45px;
+    cursor: pointer;
+    background: #252525;
+    transition:all .4s ease-out;
+    border: solid 0.5px rgb(72, 71, 71);
+  }
+
+  ul li:after {
+    font-family: 'Play', sans-serif;
+    position: absolute;
+    background: #F9D422;
+    color: #252525;
+    font-weight: bold;
+    top:0;
+    left: 45px;
+    width: 45px; height: 100%;
+    transform: perspective(400px) rotateY(90deg);
+    transform-origin: 0 100%;
+    transition: all .4s ease-out;
+  }
+
+  ul li:nth-child(1):after {
+    content: "tags";
+    font-size:12px;
+    line-height: 70px;
+  }
+
+  ul li:nth-child(2):after {
+    content: "notes";
+    font-size:12px;
+    line-height: 70px;
+  }
+
+  ul li:nth-child(3):after {
+    content: "links";
+    font-size:12px;
+    line-height: 70px;
+  }
+
+  ul li:hover {
+    transform: translateX(-45px);
+  }
+
+  ul li:hover:after {
+    transform: perspective(400px) rotateY(0deg) scale(1) ;
+  }
+
+  ul li > div {
+    display: inline-block;
+    padding: 25px 0;
+  }
+
+  ul li div {
+    position: relative;
+  }
+}
+
+
+// [[ -- TAG AREA NAVBAR -- ]]
+
+.tagArea {
+  display: flex;
+  justify-content: center;
+}
+
+.leftArea {
+  display: flex;
+  justify-content:center
+}
+
+.tagType {
+  background-color: #F9D422;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.tagType:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+              inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.tagType:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+// [[ -- TAG SELECIONADOS -- ]]
+
+
+.selectedTags{
+
+  padding: 4px;
+
+  .iconNumber {
+    font-family: 'Electrolize', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #F9D422;
+    border-radius: 2px;
+    padding: 4px 4px;
+    transition: 0.5s;
+    margin: 5px 0;
+    width: 16px;
+    text-align: center;
+  }
+
+  .iconNumber:hover {
+    color: #252525;
+    background-color:#F9D422 ;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .iconNumber:active {
+    transform: translateY(4px);
+    transition: 0.4s ease-out;
+  }
+}
