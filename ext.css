@@ -1,5 +1,7 @@
 body {
   background-color: #252525;
+  margin-left: 80px;
+  font-family: "Electrolize", sans-serif;
 }
 
 #nav {
@@ -71,20 +73,19 @@ body {
   position: relative;
 }
 
-.tagArea {
+.tagNav {
   display: flex;
-  justify-content: center;
-}
-
-.leftArea {
-  display: flex;
-  justify-content: center;
-}
-
-.tagType {
+  justify-content: space-evenly;
   background-color: #F9D422;
-  cursor: pointer;
-  font-size: 12px;
+  border-radius: 8px;
+}
+
+.tagNavArea {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #F9D422;
+  border: none;
+  border-radius: 4px;
   font-weight: bold;
 }
 
@@ -96,10 +97,66 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-.selectedTags {
+.tagTableServices {
+  display: flex;
+  color: white;
+  justify-content: space-evenly;
+}
+
+.tagTableSub {
+  margin: 0 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  text-align: center;
+  font-size: 12px;
+  width: 120px;
+  background-color: rgb(255, 255, 255);
+  color: #252525;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: fixed;
+  left: 53%;
+  top: 4%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tagSemiFinal {
+  color: red;
+}
+
+.select {
+  cursor: copy;
+}
+
+.tagFinal {
+  font-weight: normal;
+}
+
+.tagHover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.hoverBox {
+  width: 150px;
+  height: 40px;
+  background-color: #252525;
+  border: 2px solid #F9D422;
+}
+
+.favoriteTags {
   padding: 4px;
 }
-.selectedTags .iconNumber {
+.favoriteTags .iconNumber {
   font-family: "Electrolize", sans-serif;
   font-size: 16px;
   color: #fff;
@@ -111,13 +168,13 @@ body {
   width: 16px;
   text-align: center;
 }
-.selectedTags .iconNumber:hover {
+.favoriteTags .iconNumber:hover {
   color: #252525;
   background-color: #F9D422;
   cursor: pointer;
   transition: 0.5s;
 }
-.selectedTags .iconNumber:active {
+.favoriteTags .iconNumber:active {
   transform: translateY(4px);
   transition: 0.4s ease-out;
 }/*# sourceMappingURL=ext.css.map */

@@ -1,5 +1,7 @@
 body {
   background-color: #252525;
+  margin-left: 80px;
+  font-family: 'Electrolize', sans-serif;
 }
 
 // [[ -- LEFT NAVBAR -- ]]
@@ -85,38 +87,106 @@ body {
 }
 
 
-// [[ -- TAG AREA NAVBAR -- ]]
+// [[ -- TAG NAV -- ]]
 
-.tagArea {
+.tagNav {
   display: flex;
-  justify-content: center;
-}
-
-.leftArea {
-  display: flex;
-  justify-content:center
-}
-
-.tagType {
+  justify-content: space-evenly;
   background-color: #F9D422;
-  cursor: pointer;
-  font-size: 12px;
+  border-radius: 8px;
+}
+
+.tagNavArea {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #F9D422;
+  border: none;
+  border-radius: 4px;
   font-weight: bold;
 }
 
 .tagType:active {
-  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-              inset 2px 2px 3px rgba(0, 0, 0, .6);
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
 .tagType:hover {
   background-color: rgb(255, 255, 255);
 }
 
-// [[ -- TAG SELECIONADOS -- ]]
+// [[ -- ABAS -- ]]
+
+.tagTableServices {
+  display: flex;
+  color: white;
+  justify-content: space-evenly;
+}
+
+.tagTableSub {
+  margin: 0 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+// [[ -- TOOLTIPS -- ]]
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  text-align: center;
+  font-size: 12px;
+  width: 120px;
+  background-color: rgb(255, 255, 255);
+  color: #252525;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: fixed;
+  left: 53%;
+  top:4%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+// [[ -- CÉLULA VERDE EXCEL -- ]]
+
+.tagSemiFinal {
+  color: red;
+}
+
+.select {
+  cursor: copy;
+}
+
+// [[ -- TAG DE FATO -- ]]
+
+.tagTableSingle {
+
+}
+
+.tagFinal {
+  font-weight: normal;
+}
+
+// [[ -- HOVER BOX -- ]]
+
+.tagHover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.hoverBox {
+  width: 150px;
+  height: 40px;
+  background-color: #252525;
+  border: 2px solid #F9D422;
+}
 
 
-.selectedTags{
+// [[ -- TAG FAVORITOS -- ]]
+
+.favoriteTags{
 
   padding: 4px;
 
