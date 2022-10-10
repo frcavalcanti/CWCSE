@@ -4,6 +4,11 @@ body {
   font-family: 'Electrolize', sans-serif;
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 // [[ -- LEFT NAVBAR -- ]]
 #nav {
   position: absolute;
@@ -90,9 +95,6 @@ body {
 // [[ -- TAG NAV -- ]]
 
 .tagNav {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #F9D422;
   border-radius: 8px;
 }
 
@@ -103,6 +105,8 @@ body {
   border: none;
   border-radius: 4px;
   font-weight: bold;
+  padding: 4px;
+  cursor: pointer;
 }
 
 .tagType:active {
@@ -116,9 +120,8 @@ body {
 // [[ -- ABAS -- ]]
 
 .tagTableServices {
-  display: flex;
   color: white;
-  justify-content: space-evenly;
+  width: 20vw;
 }
 
 .tagTableSub {
@@ -129,21 +132,29 @@ body {
 
 // [[ -- TOOLTIPS -- ]]
 
-.tooltip .tooltiptext {
-  visibility: hidden;
+ .tooltip {
+  position: relative;
+ }
+
+ .tooltip:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 80%;
+  margin-left: 15px;
   text-align: center;
+  visibility: hidden;
   font-size: 12px;
-  width: 120px;
+  width: 150px;
   background-color: rgb(255, 255, 255);
   color: #252525;
   padding: 5px 0;
   border-radius: 6px;
-  position: fixed;
-  left: 53%;
-  top:4%;
-}
+  font-weight: bold;
+ }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover:before {
   visibility: visible;
 }
 
@@ -153,15 +164,18 @@ body {
   color: red;
 }
 
-.select {
+.selectTop {
   cursor: copy;
 }
 
-// [[ -- TAG DE FATO -- ]]
-
-.tagTableSingle {
+.selectFinal {
+  font-weight: normal;
+  margin: 16px 0 16px 16px;
+  cursor: copy;
 
 }
+
+// [[ -- TAG DE FATO -- ]]
 
 .tagFinal {
   font-weight: normal;
