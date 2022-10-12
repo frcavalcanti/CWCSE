@@ -1,0 +1,230 @@
+body {
+  background-color: #252525;
+  margin-left: 80px;
+  font-family: 'Electrolize', sans-serif;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+// [[ -- LEFT NAVBAR -- ]]
+#nav {
+  position: absolute;
+  left: 0;
+  top: 35%;
+
+  a {
+    text-decoration: none;
+  }
+
+  .fa-solid {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+
+  }
+
+  ul li {
+    position: relative;
+    width: 45px;
+    cursor: pointer;
+    background: #252525;
+    transition:all .4s ease-out;
+    border: solid 0.5px rgb(72, 71, 71);
+  }
+
+  ul li:after {
+    font-family: 'Play', sans-serif;
+    position: absolute;
+    background: #F9D422;
+    color: #252525;
+    font-weight: bold;
+    top:0;
+    left: 45px;
+    width: 45px; height: 100%;
+    transform: perspective(400px) rotateY(90deg);
+    transform-origin: 0 100%;
+    transition: all .4s ease-out;
+  }
+
+  ul li:nth-child(1):after {
+    content: "tags";
+    font-size:12px;
+    line-height: 70px;
+  }
+
+  ul li:nth-child(2):after {
+    content: "notes";
+    font-size:12px;
+    line-height: 70px;
+  }
+
+  ul li:nth-child(3):after {
+    content: "links";
+    font-size:12px;
+    line-height: 70px;
+  }
+
+  ul li:hover {
+    transform: translateX(-45px);
+  }
+
+  ul li:hover:after {
+    transform: perspective(400px) rotateY(0deg) scale(1) ;
+  }
+
+  ul li > div {
+    display: inline-block;
+    padding: 25px 0;
+  }
+
+  ul li div {
+    position: relative;
+  }
+}
+
+// [[ -- TAG NAV -- ]]
+
+.tagNav {
+  border-radius: 8px;
+}
+
+.tagNavArea {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #F9D422;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.tagType:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.tagType:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+// [[ -- ABAS -- ]]
+
+.tagTableServices {
+  color: white;
+  width: 20vw;
+}
+
+.tagTableSub {
+  margin: 0 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+// [[ -- TOOLTIPS -- ]]
+
+ .tooltip {
+  position: relative;
+ }
+
+ .tooltip:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 200px;
+  margin-left: 15px;
+  text-align: center;
+  visibility: hidden;
+  font-size: 12px;
+  width: 150px;
+  background-color: rgb(255, 255, 255);
+  color: #252525;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-weight: bold;
+ }
+
+.tooltip:hover:before {
+  visibility: visible;
+}
+
+// [[ -- CÉLULA VERDE EXCEL -- ]]
+
+.tagSemiFinal {
+  color: red;
+}
+
+.selectTop {
+  cursor: copy;
+}
+
+.selectFinal {
+  font-weight: normal;
+  margin: 16px 0 16px 16px;
+  cursor: copy;
+
+}
+
+// [[ -- TAG DE FATO -- ]]
+
+.tagFinal {
+  font-weight: normal;
+}
+
+// [[ -- HOVER BOX -- ]]
+
+.tagHover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.hoverBox {
+  width: 150px;
+  height: 40px;
+  background-color: #252525;
+  border: 2px solid #F9D422;
+}
+
+
+// [[ -- TAG FAVORITOS -- ]]
+
+.favoriteTags{
+
+  padding: 4px;
+
+  .iconNumber {
+    font-family: 'Electrolize', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #F9D422;
+    border-radius: 2px;
+    padding: 4px 4px;
+    transition: 0.5s;
+    margin: 5px 0;
+    width: 16px;
+    text-align: center;
+  }
+
+  .iconNumber:hover {
+    color: #252525;
+    background-color:#F9D422 ;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .iconNumber:active {
+    transform: translateY(4px);
+    transition: 0.4s ease-out;
+  }
+}
