@@ -78,7 +78,7 @@ body {
   position: relative;
 }
 
-.tagNav {
+#tagNav {
   border-radius: 8px;
 }
 
@@ -121,7 +121,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 80%;
+  left: 200px;
   margin-left: 15px;
   text-align: center;
   visibility: hidden;
