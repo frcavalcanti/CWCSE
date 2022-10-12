@@ -93,7 +93,7 @@ body {
 
 // [[ -- TAG NAV -- ]]
 
-.tagNav {
+#tagNav {
   border-radius: 8px;
 }
 
@@ -116,7 +116,7 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-// [[ -- ABAS -- ]]
+// [[ -- TABS -- ]]
 
 .tagTableServices {
   color: white;
@@ -157,7 +157,7 @@ body {
   visibility: visible;
 }
 
-// [[ -- CÉLULA VERDE EXCEL -- ]]
+// [[ -- GREEN CELL EXCEL -- ]]
 
 .tagSemiFinal {
   color: red;
@@ -171,10 +171,9 @@ body {
   font-weight: normal;
   margin: 16px 0 16px 16px;
   cursor: copy;
-
 }
 
-// [[ -- TAG DE FATO -- ]]
+// [[ -- TAG -- ]]
 
 .tagFinal {
   font-weight: normal;
@@ -197,7 +196,7 @@ body {
 }
 
 
-// [[ -- TAG FAVORITOS -- ]]
+// [[ -- TAG FAVORITES -- ]]
 
 .favoriteTags{
 
