@@ -10,7 +10,7 @@ body {
 }
 
 #nav {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 35%;
 }
@@ -78,8 +78,8 @@ body {
   position: relative;
 }
 
-.tagNav {
-  border-radius: 8px;
+#tagNav {
+  border-radius: 6px;
 }
 
 .tagNavArea {
@@ -89,7 +89,7 @@ body {
   border: none;
   border-radius: 4px;
   font-weight: bold;
-  padding: 4px;
+  padding: 4px 4px;
   cursor: pointer;
 }
 
@@ -101,9 +101,23 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-.tagTableServices {
+.fade {
+  list-style: none;
+  display: none !important;
+  opacity: 0;
+  visibility: hidden !important;
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
+}
+
+#tagTableMain {
   color: white;
-  width: 20vw;
+  width: 100%;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
 }
 
 .tagTableSub {
@@ -121,15 +135,13 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 80%;
-  margin-left: 15px;
   text-align: center;
   visibility: hidden;
   font-size: 12px;
-  width: 150px;
+  overflow: auto;
   background-color: rgb(255, 255, 255);
   color: #252525;
-  padding: 5px 0;
+  padding: 5px 10px;
   border-radius: 6px;
   font-weight: bold;
 }
@@ -144,11 +156,22 @@ body {
 
 .selectTop {
   cursor: copy;
+  background-color: #fff;
+  color: #252525;
+  border-radius: 6px;
+  padding: 4px 4px;
+}
+.selectTop:hover {
+  background-color: #252525;
 }
 
 .selectFinal {
   font-weight: normal;
   margin: 16px 0 16px 16px;
+}
+.selectFinal:hover {
+  color: #252525;
+  background-color: #252525;
   cursor: copy;
 }
 
@@ -194,4 +217,22 @@ body {
 .favoriteTags .iconNumber:active {
   transform: translateY(4px);
   transition: 0.4s ease-out;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=ext.css.map */

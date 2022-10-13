@@ -11,7 +11,7 @@ body {
 
 // [[ -- LEFT NAVBAR -- ]]
 #nav {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 35%;
 
@@ -93,8 +93,8 @@ body {
 
 // [[ -- TAG NAV -- ]]
 
-.tagNav {
-  border-radius: 8px;
+#tagNav {
+  border-radius: 6px;
 }
 
 .tagNavArea {
@@ -104,7 +104,7 @@ body {
   border: none;
   border-radius: 4px;
   font-weight: bold;
-  padding: 4px;
+  padding: 4px 4px;
   cursor: pointer;
 }
 
@@ -116,18 +116,32 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-// [[ -- ABAS -- ]]
+// [[ -- TABS -- ]]
 
-.tagTableServices {
+.fade {
+  list-style: none;
+  display: none !important;
+  opacity: 0;
+  visibility: hidden !important;
+  animation: fade 1s;
+}
+
+#tagTableMain {
   color: white;
-  width: 20vw;
+  width: 100%;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  animation: fade 1s;
 }
 
 .tagTableSub {
   margin: 0 12px;
   font-weight: bold;
   font-size: 14px;
+
 }
+
 
 // [[ -- TOOLTIPS -- ]]
 
@@ -140,15 +154,13 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 200px;
-  margin-left: 15px;
   text-align: center;
   visibility: hidden;
   font-size: 12px;
-  width: 150px;
+  overflow: auto;
   background-color: rgb(255, 255, 255);
   color: #252525;
-  padding: 5px 0;
+  padding: 5px 10px;
   border-radius: 6px;
   font-weight: bold;
  }
@@ -157,7 +169,7 @@ body {
   visibility: visible;
 }
 
-// [[ -- CÉLULA VERDE EXCEL -- ]]
+// [[ -- GREEN CELL EXCEL -- ]]
 
 .tagSemiFinal {
   color: red;
@@ -165,16 +177,27 @@ body {
 
 .selectTop {
   cursor: copy;
+  background-color: #fff;
+  color: #252525;
+  border-radius: 6px;
+  padding: 4px 4px;
+  &:hover {
+    background-color: #252525;
+  }
 }
 
 .selectFinal {
   font-weight: normal;
   margin: 16px 0 16px 16px;
-  cursor: copy;
-
+  &:hover {
+    color: #252525;
+    background-color: #252525;
+    cursor: copy;
+  }
 }
 
-// [[ -- TAG DE FATO -- ]]
+
+// [[ -- TAG -- ]]
 
 .tagFinal {
   font-weight: normal;
@@ -197,7 +220,7 @@ body {
 }
 
 
-// [[ -- TAG FAVORITOS -- ]]
+// [[ -- TAG FAVORITES -- ]]
 
 .favoriteTags{
 
@@ -226,5 +249,20 @@ body {
   .iconNumber:active {
     transform: translateY(4px);
     transition: 0.4s ease-out;
+  }
+}
+
+
+
+// [[ -- KEY FRAMES -- ]]
+
+
+@keyframes fade {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
   }
 }
