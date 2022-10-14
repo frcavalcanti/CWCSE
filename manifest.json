@@ -1,12 +1,18 @@
 {
-  "name": "test",
-  "description": "test",
+  "name": "Test",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["storage"],
   "background": {
-    "service_worker": "background.js"
+      "service_worker": "background.js"
   },
-
-  "action": {  }
+  "action": {
+      "default_popup": "home.html"
+  },
+  "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+  ],
+  "permissions": ["tabs", "storage","activeTab","declarativeContent", "clipboardRead"]
 }

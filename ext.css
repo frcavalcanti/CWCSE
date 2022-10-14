@@ -1,7 +1,16 @@
+html {
+  min-width: 400px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 body {
   background-color: #252525;
-  margin-left: 80px;
   font-family: "Electrolize", sans-serif;
+}
+body p {
+  font-family: "Play", sans-serif;
 }
 
 .mainContainer {
@@ -155,7 +164,7 @@ body {
 }
 
 .selectTop {
-  cursor: copy;
+  cursor: pointer;
   background-color: #fff;
   color: #252525;
   border-radius: 6px;
@@ -172,7 +181,7 @@ body {
 .selectFinal:hover {
   color: #252525;
   background-color: #252525;
-  cursor: copy;
+  cursor: pointer;
 }
 
 .tagFinal {
