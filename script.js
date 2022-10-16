@@ -121,26 +121,26 @@ document.getElementById("clip").onclick = function () {
 
 // [[ Queries]]
 
-let today = new Date();
-let dd = String(today.getDate()).padStart(2, '0');
-let mm = String(today.getMonth() + 1).padStart(2, '0'); //January 0!
-let yyyy = today.getFullYear();
+// let today = new Date();
+// let dd = String(today.getDate()).padStart(2, '0');
+// let mm = String(today.getMonth() + 1).padStart(2, '0'); //January 0!
+// let yyyy = today.getFullYear();
 
-today = `${yyyy}-${mm}-${dd}`;
+// today = `${yyyy}-${mm}-${dd}`;
 
-document.getElementById("warRoom").addEventListener("click", function() {
-  document.getElementById("wrSquad").value;
-  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/dashboard/466-warroom?calendar_start=${today}&calendar_end=${today}&squad=${wrSquad.value}`)
-})
+// document.getElementById("warRoom").addEventListener("click", function() {
+//   document.getElementById("wrSquad").value;
+//   window.open(``)
+// })
 
-document.getElementById("untagged").addEventListener("click", function() {
-  document.getElementById("qrEngineer").value;
-  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/auth/sso?redirect=http://metabase-dot-infinitepay-production-rj.r.appspot.com/question/5831-chats-without-tags-de-atendimento-2-0?calendar_start=${today}&calendar_end=${today}&ANALISTA=%25${qrEngineer.value}%25&squad=%25${wrSquad.value}%25`)
-})
+// document.getElementById("untagged").addEventListener("click", function() {
+//   document.getElementById("qrEngineer").value;
+//   window.open(``)
+// })
 
-document.getElementById("pix").addEventListener("click", function() {
-  document.getElementById("pixCNPJ").value;
-  document.getElementById("pixStart").value;
-  document.getElementById("pixEnd").value;
-  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/auth/login?redirect=http://metabase-dot-infinitepay-production-rj.r.appspot.com/question/3430-get-btg-webhooks-from-document?ECDoc=${pixCNPJ.value}&calendar_start=${pixStart.value}&calendar_end=${pixEnd.value}`)
-})
+// document.getElementById("pix").addEventListener("click", function() {
+//   document.getElementById("pixCNPJ").value;
+//   document.getElementById("pixStart").value;
+//   document.getElementById("pixEnd").value;
+//   window.open(``)
+// })
