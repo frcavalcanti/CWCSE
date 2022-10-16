@@ -13,26 +13,72 @@
   <body>
     <div class="mainContainer">
       <div id="tagNav">
-        <form>
-          <button class="notes" formaction="queries.html">Notes</button>
-        </form>
+        <div class="saveIt" id="clip"></div>
+        <div class="saveIt" id="floppy"></div>
+        <!-- Queries -->
+
         <div class="queriesTitle" >
           <h1 style="color: white">Queries</h1>
-          <p> Saving inputs will keep them even after closing Chrome </p>
+          <p> Clicking on icons - as well as buttons - saves inputs </p>
+
+          <!-- Query Input Fields -->
+          <div class="queryFields">
+            <div class="queryFieldsInner">
+              <label for="wrSquad">Squad</label>
+              <textarea type="text" style="overflow:hidden; resize:none" id="wrSquad" placeholder="Squad name..."></textarea>
+            </div>
+            <div class="queryFieldsInner">
+              <label for="qrEngineer">Participated</label>
+              <textarea type="text" style="overflow:hidden; resize:none" id="qrEngineer" placeholder="Analyst name..."></textarea>
+            </div>
+          </div>
+          <div class="queryFields">
+            <div class="queryFieldsInner">
+              <label for="pixCNPJ">EC</label>
+              <textarea type="text" style="overflow:hidden; resize:none" id="pixCNPJ" placeholder="CNPJ..."></textarea>
+            </div>
+            <div class="queryFieldsInner">
+              <label for="pixStart">PIX Start</label>
+              <textarea type="text" style="overflow:hidden; resize:none" id="pixStart" placeholder="yyyy-mm-dd"></textarea>
+            </div>
+            <div class="queryFieldsInner">
+              <label for="pixEnd">PIX End</label>
+              <textarea type="text" style="overflow:hidden; resize:none" id="pixEnd" placeholder="yyyy-mm-dd"></textarea>
+            </div>
+          </div>
         </div>
-        <div class="warRoomQuery">
-          <label for="wrSquad">War Room</label>
-          <textarea type="text" style="overflow:hidden; resize:none" id="wrSquad" placeholder="Type a squad name..."></textarea>
-          <div id="warRoom"></div>
+
+        <!-- Query Icons -->
+        <div class="queryIcons">
+          <div class="warRoomQuery">
+            <div class="saveIt" id="warRoom"></div>
+            <p>War Room</p>
+          </div>
+          <div class="untaggedQuery">
+            <div class="saveIt" id="untagged"></div>
+            <p>Untagged</p>
+          </div>
+          <div class="pixQuery">
+            <div class="saveIt" id="pix"></div>
+            <p>PIX</p>
+          </div>
         </div>
-        <div id="save">
-            <p>Save Inputs</p>
-        </div>
+
+        <!-- Tag Types -->
         <div id="areaTag">
           <h2 class="tagNavArea" id="accreditationHide"> ACCREDITATION </h2>
+
+
           <h2 class="tagNavArea" id="deliveryHide"> DELIVERY </h2>
+
+
+
           <h2 class="tagNavArea" id="posDoubtHide"> POS DOUBT </h2>
+
+
           <h2 class="tagNavArea" id="salesErrorHide"> SALES ERROR </h2>
+
+
           <h2 class="tagNavArea" id="servicesHide"> SERVICES </h2>
             <div id="serviceTableMain">
               <div class="tagTableSub">
@@ -156,9 +202,19 @@
             </div>
           <h2 class="tagNavArea" id="withdrawsHide"> WITHDRAWS </h2>
           <h2 class="tagNavArea" id="standaloneHide"> STANDALONE </h2>
-          <img id="logo" src="images/cwWhite-removebg-preview.png">
         </div>
       </div>
+
+      <!-- Notes -->
+      <div id="notesHide">
+        <a href="home.html">
+          <input id="bbutton" class="saveIt" type="button" value="Back">
+        </a>
+        <div class="saveIt" id="floppyNote"></div>
+        <p> Write reminders or quick notes, click on save or back to store them.</p>
+        <textarea type="text" style="overflow:hidden; resize:none" id="takeNote" placeholder="Write whatever you want saved..."></textarea>
+      </div>
+
     </div>
     <script src="script.js"></script>
   </body>
