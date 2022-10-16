@@ -135,12 +135,12 @@ document.getElementById("warRoom").addEventListener("click", function() {
 
 document.getElementById("untagged").addEventListener("click", function() {
   document.getElementById("qrEngineer").value;
-  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/question/5831-chats-without-tags-de-atendimento-2-0?calendar_start=${today}&calendar_end=${today}&ANALISTA=%25&squad=%25${wrSquad.value}%25`)
+  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/auth/sso?redirect=http://metabase-dot-infinitepay-production-rj.r.appspot.com/question/5831-chats-without-tags-de-atendimento-2-0?calendar_start=${today}&calendar_end=${today}&ANALISTA=%25${qrEngineer.value}%25&squad=%25${wrSquad.value}%25`)
 })
 
 document.getElementById("pix").addEventListener("click", function() {
   document.getElementById("pixCNPJ").value;
   document.getElementById("pixStart").value;
   document.getElementById("pixEnd").value;
-  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/question/3430-get-btg-webhooks-from-document?ECDoc=${pixCNPJ.value}&calendar_start=${pixStart.value}&calendar_end=${pixEnd.value}`)
+  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/auth/login?redirect=http://metabase-dot-infinitepay-production-rj.r.appspot.com/question/3430-get-btg-webhooks-from-document?ECDoc=${pixCNPJ.value}&calendar_start=${pixStart.value}&calendar_end=${pixEnd.value}`)
 })
