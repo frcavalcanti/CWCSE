@@ -1,31 +1,58 @@
-// [[ Save]]
+// [[ Save ]]
 
-document.getElementById("save").addEventListener("click", () => {
-
-  chrome.storage.sync.set ({
-    wrSquad: document.getElementById("wrSquad").value,
-  },
-    function() {
-      chrome.storage.sync.get([
-          "wrSquad"
-        ],
-        function(result) {
-          document.getElementById('wrSquad').textContent = result.wrSquad
-        }
-      )
-    }
-  )
+document.querySelectorAll('.saveIt').forEach(item => {
+  item.addEventListener('click', function () {
+    chrome.storage.sync.set ({
+      wrSquad: document.getElementById("wrSquad").value,
+      qrEngineer: document.getElementById("qrEngineer").value,
+      pixCNPJ: document.getElementById("pixCNPJ").value,
+      pixStart: document.getElementById("pixStart").value,
+      pixEnd: document.getElementById("pixEnd").value,
+      takeNote: document.getElementById("takeNote").value
+    },
+      function() {
+        chrome.storage.sync.get([
+            "wrSquad",
+            "qrEngineer",
+            "pixCNPJ",
+            "pixStart",
+            "pixEnd",
+            "takeNote"
+          ],
+          function(result) {
+            document.getElementById('wrSquad').textContent = result.wrSquad;
+            document.getElementById('qrEngineer').textContent = result.qrEngineer;
+            document.getElementById('pixCNPJ').textContent = result.pixCNPJ;
+            document.getElementById('pixStart').textContent = result.pixStart;
+            document.getElementById('pixEnd').textContent = result.pixEnd;
+            document.getElementById('takeNote').textContent = result.takeNote
+          }
+        )
+      }
+    )
+  })
 })
 
 // [[ When OPEN = GET saved inputs ]]
 
 window.onload = function() {
   chrome.storage.sync.get([
-    "wrSquad"
+    "wrSquad",
+    "qrEngineer",
+    "pixCNPJ",
+    "pixStart",
+    "pixEnd",
+    "takeNote"
     ],
 
     function(result) {
-      document.getElementById('wrSquad').textContent = result.wrSquad
+      document.getElementById('wrSquad').textContent = result.wrSquad;
+      document.getElementById('wrSquad').textContent = result.wrSquad;
+      document.getElementById('qrEngineer').textContent = result.qrEngineer;
+      document.getElementById('pixCNPJ').textContent = result.pixCNPJ;
+      document.getElementById('pixStart').textContent = result.pixStart;
+      document.getElementById('pixEnd').textContent = result.pixEnd;
+      document.getElementById('takeNote').textContent = result.takeNote;
     }
   )
 };
@@ -83,6 +110,15 @@ document.getElementById("standaloneHide").onclick = function () {
   standaloneTags.classList.toggle("fade")
 }
 
+document.getElementById("clip").onclick = function () {
+  let tagContainer = document.getElementById("tagNav")
+  let notesContainer = document.getElementById("notesHide")
+
+  tagContainer.classList.toggle("dnone")
+  notesContainer.classList.toggle("dshow")
+}
+
+
 // [[ Queries]]
 
 let today = new Date();
@@ -95,4 +131,16 @@ today = `${yyyy}-${mm}-${dd}`;
 document.getElementById("warRoom").addEventListener("click", function() {
   document.getElementById("wrSquad").value;
   window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/dashboard/466-warroom?calendar_start=${today}&calendar_end=${today}&squad=${wrSquad.value}`)
+})
+
+document.getElementById("untagged").addEventListener("click", function() {
+  document.getElementById("qrEngineer").value;
+  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/question/5831-chats-without-tags-de-atendimento-2-0?calendar_start=${today}&calendar_end=${today}&ANALISTA=%25&squad=%25${wrSquad.value}%25`)
+})
+
+document.getElementById("pix").addEventListener("click", function() {
+  document.getElementById("pixCNPJ").value;
+  document.getElementById("pixStart").value;
+  document.getElementById("pixEnd").value;
+  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/question/3430-get-btg-webhooks-from-document?ECDoc=${pixCNPJ.value}&calendar_start=${pixStart.value}&calendar_end=${pixEnd.value}`)
 })

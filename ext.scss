@@ -22,6 +22,22 @@ textarea {
   color: white;
   padding: 2px;
   height: 16px;
+  width: 100px;
+}
+
+#takeNote {
+  margin: 20px 0;
+  height: 400px;
+  width: 400px;
+}
+
+#notesHide {
+  display: none;
+  color: #F9D422;
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 // ---------------------[[ SCROLL BAR ]]-----------------
@@ -54,7 +70,6 @@ textarea {
 
 // ---------------------[[ EXTENSION AREA ]]-----------------
 
-
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -70,6 +85,7 @@ textarea {
 }
 
 .tagNavArea {
+  font-size: 16px;
   color: white;
   border-bottom: 2px solid #F9D422;
   transition: 1s;
@@ -110,6 +126,10 @@ textarea {
   display: none;
 }
 
+.dshow {
+  display: block !important;
+}
+
 #serviceTableMain {
   display: none;
   opacity: 0;
@@ -117,10 +137,10 @@ textarea {
 }
 
 .tagTableSub {
-  margin: 0 12px;
+  font-size: 12px;
   font-weight: bold;
-  font-size: 14px;
   color: white;
+  margin: 0 12px;
   width: 100%;
 }
 
@@ -153,10 +173,6 @@ textarea {
 
 // [[ -- GREEN CELL EXCEL -- ]]
 
-.tagSemiFinal {
-  color: red;
-}
-
 .selectTop {
   cursor: pointer;
   background-color: #fff;
@@ -170,8 +186,10 @@ textarea {
 }
 
 .selectFinal {
+  font-size: 14px;
   font-weight: normal;
   margin: 16px 0 16px 16px;
+
   &:hover {
     color: #252525;
     background-color: #252525;
@@ -179,15 +197,257 @@ textarea {
   }
 }
 
-
 // [[ -- TAG -- ]]
 
 .tagFinal {
   font-weight: normal;
 }
 
-// [[ -- KEY FRAMES -- ]]
+// ---------------------[[ QUERIES ]]-----------------
 
+#bbutton {
+  background: none;
+  font-family: 'Play', sans-serif;;
+  border:2px solid #F9D422;
+  color: white;
+  transition: 0.5s;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #F9D422;
+    color: #252525;
+    transition: 0.5s;
+    font-weight: bold;
+    border-radius: 2px;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+#nbutton {
+  background: none;
+  font-family: 'Play', sans-serif;;
+  border:2px solid #F9D422;
+  color: white;
+  transition: 0.5s;
+  border-radius: 2px;
+  position: absolute;
+  top: 34px;
+  right: 84px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #F9D422;
+    color: #252525;
+    transition: 0.5s;
+    font-weight: bold;
+    border-radius: 2px;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+#sbutton {
+  background: none;
+  font-family: 'Play', sans-serif;;
+  border:2px solid #F9D422;
+  color: white;
+  transition: 0.5s;
+  border-radius: 2px;
+  position: absolute;
+  top: 34px;
+  right: 24px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #F9D422;
+    color: #252525;
+    transition: 0.5s;
+    font-weight: bold;
+    border-radius: 2px;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+#floppy {
+  cursor: pointer;
+  background: url(images/floppy.png) no-repeat center;
+  background-size: contain;
+  height: 16px;
+  width: 14px;
+  position:absolute;
+  top: 32px;
+  left: 150px;
+
+  &:hover {
+    background: url(images/floppyHover.png) no-repeat center;
+    background-size: contain;
+    transition: 1s;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+#floppyNote {
+  cursor: pointer;
+  background: url(images/floppy.png) no-repeat center;
+  background-size: contain;
+  height: 16px;
+  width: 14px;
+  position:absolute;
+  top: 10px;
+  left: 70px;
+
+  &:hover {
+    background: url(images/floppyHover.png) no-repeat center;
+    background-size: contain;
+    transition: 1s;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+#clip {
+  cursor: pointer;
+  background: url(images/clip.png) no-repeat center;
+  background-size: contain;
+  height: 16px;
+  width: 16px;
+  position:absolute;
+  top: 32px;
+  left: 120px;
+
+  &:hover {
+    background: url(images/clipHover.png) no-repeat center;
+    background-size: contain;
+    transition: 1s;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.queriesTitle {
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0;
+    color: #F9D422;
+    font-size: 10px;
+  }
+}
+
+.queryFields {
+  display: flex;
+  justify-content: space-evenly;
+  .queryFieldsInner{
+    flex-direction: column;
+  }
+}
+
+label {
+  display: block;
+  margin: 10px 0 0 0;
+  color: white;
+  font-size: 12px;
+}
+
+
+.queryIcons {
+  display: flex;
+  justify-content: space-evenly;
+  color:white;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.warRoomQuery {
+  height: 40px;
+
+  #warRoom {
+    cursor: pointer;
+    background: url(images/sWave.png) no-repeat center;
+    background-size: contain;
+    height: 32px;
+    width: 32px;
+    margin: auto;
+
+    &:hover {
+      background: url(images/sWaveHover.png) no-repeat center;
+      background-size: contain;
+      transition: 1s;
+    }
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.untaggedQuery {
+  height: 40px;
+
+  #untagged {
+    cursor: pointer;
+    background: url(images/tags.png) no-repeat center;
+    background-size: contain;
+    height: 32px;
+    width: 32px;
+    margin: auto;
+
+    &:hover {
+      background: url(images/tagsHover.png) no-repeat center;
+      background-size: contain;
+      transition: 1s;
+    }
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.pixQuery {
+  height: 40px;
+
+  #pix {
+    cursor: pointer;
+    background: url(images/pix.png) no-repeat center;
+    background-size: contain;
+    height: 32px;
+    width: 32px;
+
+    &:hover {
+      background: url(images/pixHover.png) no-repeat center;
+      background-size: contain;
+      transition: 1s;
+    }
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+// [[ -- KEY FRAMES -- ]]
 
 @keyframes fade {
   0% {
@@ -200,118 +460,5 @@ textarea {
       opacity: 1;
       visibility: visible;
       display: block;
-  }
-}
-
-
-// ---------------------[[ QUERIES ]]-----------------
-
-
-#bbutton {
-  background: none;
-  font-family: 'Play', sans-serif;;
-  border:2px solid #F9D422;
-  color: white;
-  transition: 0.5s;
-  border-radius: 2px;
-
-  &:hover {
-    background-color: #F9D422;
-    color: #252525;
-    transition: 0.5s;
-    font-weight: bold;
-    border-radius: 2px;
-
-  }
-
-  &:active {
-    transform: translateY(2px);
-  }
-}
-
-.queriesTitle {
-
-  h1 {
-    margin-bottom: 0;
-  }
-
-  p {
-    margin-top: 0;
-    color: #F9D422;
-    font-size: 10px;
-  }
-
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  color: white;
-  font-size: 12px;
-}
-
-.warRoomQuery {
-  height: 40px;
-  position: relative;
-
-  textarea {
-    position: absolute;
-    bottom: 0;
-  }
-
-  #warRoom {
-    cursor: pointer;
-    background: url(images/sWave.png) no-repeat center;
-    background-size: contain;
-    height: 32px;
-    width: 32px;
-    position: absolute;
-    bottom: 0;
-    left: 40vw;
-
-    &:hover {
-      background: url(images/sWaveHover.png) no-repeat center;
-      background-size: contain;
-      transition: 1s;
-    }
-  }
-
-  #warRoomAfter {
-    cursor: pointer;
-    display: none;
-    transform: scale(0.55);
-    position: absolute;
-    left: 50vw;
-  }
-}
-
-
-#save {
-  font-family: 'Play', sans-serif;;
-  text-align: center;
-  margin: auto;
-  background: none;
-  border:2px solid #F9D422;
-  color: white;
-  border-radius: 2px;
-  width: 20vw;
-  margin-top:20px;
-
-  &:hover {
-    background-color: #F9D422;
-    color: #252525;
-    transition: 0.5s;
-    font-weight: bold;
-    border-radius: 2px;
-    cursor: pointer;
-  }
-
-  &:active {
-    transform: translateY(4px);
-    transition: 0.5s ease-out;
-  }
-
-  p {
-    margin: 0;
   }
 }
