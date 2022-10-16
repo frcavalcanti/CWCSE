@@ -8,9 +8,42 @@ html {
 body {
   background-color: #252525;
   font-family: "Electrolize", sans-serif;
+  margin-left: 12px;
 }
 body p {
   font-family: "Play", sans-serif;
+}
+
+textarea {
+  font-family: "Play", sans-serif;
+  font-size: 12px;
+  background: none;
+  color: white;
+  padding: 2px;
+  height: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #252525;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F9D422;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 213, 34, 0.8784313725);
+}
+
+#logo {
+  position: fixed;
+  bottom: -5%;
+  left: 90px;
+  transform: scale(0.2);
 }
 
 .mainContainer {
@@ -18,88 +51,27 @@ body p {
   flex-direction: column;
 }
 
-#nav {
-  position: fixed;
-  left: 0;
-  top: 35%;
-}
-#nav a {
-  text-decoration: none;
-}
-#nav .fa-solid {
-  color: white;
-  font-size: 16px;
-  text-align: center;
-}
-#nav ul {
-  text-align: center;
-  list-style-type: none;
-  padding: 0;
-}
-#nav ul li {
-  position: relative;
-  width: 45px;
-  cursor: pointer;
-  background: #252525;
-  transition: all 0.4s ease-out;
-  border: solid 0.5px rgb(72, 71, 71);
-}
-#nav ul li:after {
-  font-family: "Play", sans-serif;
-  position: absolute;
-  background: #F9D422;
-  color: #252525;
-  font-weight: bold;
-  top: 0;
-  left: 45px;
-  width: 45px;
-  height: 100%;
-  transform: perspective(400px) rotateY(90deg);
-  transform-origin: 0 100%;
-  transition: all 0.4s ease-out;
-}
-#nav ul li:nth-child(1):after {
-  content: "tags";
-  font-size: 12px;
-  line-height: 70px;
-}
-#nav ul li:nth-child(2):after {
-  content: "notes";
-  font-size: 12px;
-  line-height: 70px;
-}
-#nav ul li:nth-child(3):after {
-  content: "links";
-  font-size: 12px;
-  line-height: 70px;
-}
-#nav ul li:hover {
-  transform: translateX(-45px);
-}
-#nav ul li:hover:after {
-  transform: perspective(400px) rotateY(0deg) scale(1);
-}
-#nav ul li > div {
-  display: inline-block;
-  padding: 25px 0;
-}
-#nav ul li div {
-  position: relative;
-}
-
 #tagNav {
   border-radius: 6px;
+  overflow: hidden;
 }
 
 .tagNavArea {
-  font-size: 14px;
-  font-weight: bold;
+  color: white;
+  border-bottom: 2px solid #F9D422;
+  transition: 1s;
+  padding: 4px 4px;
+  transform: translate3d(0, 0, 0);
+  width: 50%;
+  cursor: pointer;
+}
+.tagNavArea:hover {
   background-color: #F9D422;
-  border: none;
-  border-radius: 4px;
+  color: #252525;
+  transition: 1s;
   font-weight: bold;
   padding: 4px 4px;
-  cursor: pointer;
+  border-radius: 4px;
 }
 
 .tagType:active {
@@ -112,27 +84,29 @@ body p {
 
 .fade {
   list-style: none;
-  display: none !important;
-  opacity: 0;
-  visibility: hidden !important;
-  -webkit-animation: fade 1s;
-          animation: fade 1s;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-animation: fade;
+          animation: fade;
 }
 
-#tagTableMain {
-  color: white;
-  width: 100%;
-  display: block;
-  visibility: visible;
-  opacity: 1;
-  -webkit-animation: fade 1s;
-          animation: fade 1s;
+.dnone {
+  display: none;
+}
+
+#serviceTableMain {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .tagTableSub {
   margin: 0 12px;
   font-weight: bold;
   font-size: 14px;
+  color: white;
+  width: 100%;
 }
 
 .tooltip {
@@ -169,6 +143,7 @@ body p {
   color: #252525;
   border-radius: 6px;
   padding: 4px 4px;
+  width: 45%;
 }
 .selectTop:hover {
   background-color: #252525;
@@ -188,60 +163,120 @@ body p {
   font-weight: normal;
 }
 
-.tagHover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.hoverBox {
-  width: 150px;
-  height: 40px;
-  background-color: #252525;
-  border: 2px solid #F9D422;
-}
-
-.favoriteTags {
-  padding: 4px;
-}
-.favoriteTags .iconNumber {
-  font-family: "Electrolize", sans-serif;
-  font-size: 16px;
-  color: #fff;
-  border: 2px solid #F9D422;
-  border-radius: 2px;
-  padding: 4px 4px;
-  transition: 0.5s;
-  margin: 5px 0;
-  width: 16px;
-  text-align: center;
-}
-.favoriteTags .iconNumber:hover {
-  color: #252525;
-  background-color: #F9D422;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.favoriteTags .iconNumber:active {
-  transform: translateY(4px);
-  transition: 0.4s ease-out;
-}
-
 @-webkit-keyframes fade {
   0% {
     opacity: 0;
+    visibility: hidden;
+    display: none;
   }
   100% {
     opacity: 1;
+    visibility: visible;
+    display: block;
   }
 }
 
 @keyframes fade {
   0% {
     opacity: 0;
+    visibility: hidden;
+    display: none;
   }
   100% {
     opacity: 1;
+    visibility: visible;
+    display: block;
   }
+}
+#bbutton {
+  background: none;
+  font-family: "Play", sans-serif;
+  border: 2px solid #F9D422;
+  color: white;
+  transition: 0.5s;
+  border-radius: 2px;
+}
+#bbutton:hover {
+  background-color: #F9D422;
+  color: #252525;
+  transition: 0.5s;
+  font-weight: bold;
+  border-radius: 2px;
+}
+#bbutton:active {
+  transform: translateY(2px);
+}
+
+.queriesTitle h1 {
+  margin-bottom: 0;
+}
+.queriesTitle p {
+  margin-top: 0;
+  color: #F9D422;
+  font-size: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+.warRoomQuery {
+  height: 40px;
+  position: relative;
+}
+.warRoomQuery textarea {
+  position: absolute;
+  bottom: 0;
+}
+.warRoomQuery #warRoom {
+  cursor: pointer;
+  background: url(images/sWave.png) no-repeat center;
+  background-size: contain;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  bottom: 0;
+  left: 40vw;
+}
+.warRoomQuery #warRoom:hover {
+  background: url(images/sWaveHover.png) no-repeat center;
+  background-size: contain;
+  transition: 1s;
+}
+.warRoomQuery #warRoomAfter {
+  cursor: pointer;
+  display: none;
+  transform: scale(0.55);
+  position: absolute;
+  left: 50vw;
+}
+
+#save {
+  font-family: "Play", sans-serif;
+  text-align: center;
+  margin: auto;
+  background: none;
+  border: 2px solid #F9D422;
+  color: white;
+  border-radius: 2px;
+  width: 20vw;
+  margin-top: 20px;
+}
+#save:hover {
+  background-color: #F9D422;
+  color: #252525;
+  transition: 0.5s;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+}
+#save:active {
+  transform: translateY(4px);
+  transition: 0.5s ease-out;
+}
+#save p {
+  margin: 0;
 }/*# sourceMappingURL=ext.css.map */

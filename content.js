@@ -5,7 +5,6 @@ chrome.runtime.onMessage.addListener(
           sendResponse({status: "Success!"});
       } catch (error) {
           console.log(error)
-          sendResponse({status: "Exception occurred!"});
       }
   }
 );
