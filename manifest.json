@@ -21,14 +21,5 @@
         "js": ["content.js"]
       }
   ],
-  "permissions": [
-    "tabs",
-    "storage",
-    "activeTab",
-    "declarativeContent",
-    "clipboardRead"
-  ],
-  "host_permissions": [
-    "https://*/*"
-  ]
+  "permissions": ["tabs", "storage", "activeTab", "declarativeContent", "clipboardRead"]
 }
