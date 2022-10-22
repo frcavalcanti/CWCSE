@@ -65,7 +65,7 @@ for (let i=0; i < tag.length; i++) {
   tag[i].onclick = function () {
     chrome.tabs.query({active: true, currentWindow:true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {
-        tooltip: tag[i].dataset.text, // converts tooltip to text, sends message to content.js code, paste into div cmd-k-input
+        tooltip: tag[i].dataset.text, // JSON key: value
       }), function(response) {
         console.log(response.status)
       }
@@ -121,17 +121,18 @@ document.getElementById("clip").onclick = function () {
 
 // [[ Queries]]
 
-// let today = new Date();
-// let dd = String(today.getDate()).padStart(2, '0');
-// let mm = String(today.getMonth() + 1).padStart(2, '0'); //January 0!
-// let yyyy = today.getFullYear();
+let today = new Date();
+let dd = String(today.getDate()).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January 0!
+let yyyy = today.getFullYear();
 
-// today = `${yyyy}-${mm}-${dd}`;
+today = `${yyyy}-${mm}-${dd}`;
 
-// document.getElementById("warRoom").addEventListener("click", function() {
-//   document.getElementById("wrSquad").value;
-//   window.open(``)
-// })
+document.getElementById("warRoom").addEventListener("click", function() {
+  document.getElementById("wrSquad").value;
+  sessionStorage.getItem("key", "value");
+  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/dashboard/466-warroom?calendar_start=${today}&calendar_end=${today}&squad=${wrSquad.value}`, "_blank")
+})
 
 // document.getElementById("untagged").addEventListener("click", function() {
 //   document.getElementById("qrEngineer").value;
