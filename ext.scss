@@ -8,7 +8,7 @@ html {
 body {
   background-color: #252525;
   font-family: 'Electrolize', sans-serif;
-  margin-left: 12px;
+  margin-left: 20px;
 
   p {
     font-family: 'Play', sans-serif;;
@@ -130,7 +130,7 @@ textarea {
   display: block !important;
 }
 
-#serviceTableMain {
+.tableMain {
   display: none;
   opacity: 0;
   visibility: hidden;
@@ -170,6 +170,34 @@ textarea {
 .tooltip:hover:before {
   visibility: visible;
 }
+
+
+
+// [[ -- COLLAPSE ICON -- ]]
+
+#collapseTags {
+
+  h3 {
+    position: fixed;
+    top: 67%;
+    left: 4px;
+    border: 1px solid #F9D422;
+    color: white;
+    width: 10px;
+    font-size: 8px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F9D422;
+      color: #252525;
+      transition: 1s;
+      font-weight: bold;
+    }
+  }
+
+}
+
 
 // [[ -- GREEN CELL EXCEL -- ]]
 
