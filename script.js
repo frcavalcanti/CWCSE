@@ -73,40 +73,57 @@ for (let i=0; i < tag.length; i++) {
   };
 }
 
-// [[ Visibility ]]
+// [[ Visibility ]] -- could be refactored next update
+
+let hideAll = document.getElementById("collapseTags")
+
+let accreditationTags = document.getElementById("accreditationTableMain");
+let deliveryTags = document.getElementById("deliveryTableMain");
+let posDoubtTags = document.getElementById("posTableMain");
+let salesErrorTags = document.getElementById("salesErrorTableMain")
+let serviceTags = document.getElementById("serviceTableMain");
+let withdrawsTags = document.getElementById("withdrawsTableMain");
+let standaloneTags = document.getElementById("standaloneTableMain");
+
+
+
+
+hideAll.onclick = function () {
+  accreditationTags.classList.remove("fade");
+  deliveryTags.classList.remove("fade");
+  posDoubtTags.classList.remove("fade");
+  salesErrorTags.classList.remove("fade");
+  serviceTags.classList.remove("fade");
+  withdrawsTags.classList.remove("fade");
+  standaloneTags.classList.remove("fade");
+}
+
 
 document.getElementById("accreditationHide").onclick = function () {
-  let accreditationTags = document.getElementById("accreditationTableMain");
   accreditationTags.classList.toggle("fade")
 }
 
 document.getElementById("deliveryHide").onclick = function () {
-  let deliveryTags = document.getElementById("deliveryTableMain");
   deliveryTags.classList.toggle("fade")
 }
 
 document.getElementById("posDoubtHide").onclick = function () {
-  let posDoubtTags = document.getElementById("posDoubtTableMain");
   posDoubtTags.classList.toggle("fade")
 }
 
 document.getElementById("salesErrorHide").onclick = function () {
-  let salesErrorTags = document.getElementById("salesErrorTableMain");
   salesErrorTags.classList.toggle("fade")
 }
 
 document.getElementById("servicesHide").onclick = function () {
-  let serviceTags = document.getElementById("serviceTableMain");
   serviceTags.classList.toggle("fade")
 }
 
 document.getElementById("withdrawsHide").onclick = function () {
-  let withdrawsTags = document.getElementById("withdrawsTableMain");
   withdrawsTags.classList.toggle("fade")
 }
 
 document.getElementById("standaloneHide").onclick = function () {
-  let standaloneTags = document.getElementById("standaloneTableMain");
   standaloneTags.classList.toggle("fade")
 }
 
@@ -119,6 +136,7 @@ document.getElementById("clip").onclick = function () {
 }
 
 
+
 // [[ Queries]]
 
 let today = new Date();
@@ -128,10 +146,12 @@ let yyyy = today.getFullYear();
 
 today = `${yyyy}-${mm}-${dd}`;
 
-document.getElementById("warRoom").addEventListener("click", function() {
+const wR = document.getElementById("warRoom")
+
+wR.addEventListener("click", function() {
   document.getElementById("wrSquad").value;
-  sessionStorage.getItem("key", "value");
-  window.open(`https://metabase-dot-infinitepay-production-rj.r.appspot.com/dashboard/466-warroom?calendar_start=${today}&calendar_end=${today}&squad=${wrSquad.value}`, "_blank")
+  let newURL =
+  chrome.tabs.create({ url: newURL})
 })
 
 // document.getElementById("untagged").addEventListener("click", function() {
