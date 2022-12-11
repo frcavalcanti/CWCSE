@@ -162,6 +162,25 @@ label {
   }
 }
 
+#updateGear {
+  cursor: pointer;
+  background: url(images/update.png) no-repeat center;
+  background-size: contain;
+  height: 16px;
+  width: 14px;
+  position:absolute;
+  top: 23px;
+  left: 230px;
+  &:hover {
+    background: url(images/update.png) no-repeat center;
+    background-size: contain;
+    transition: 1s;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
 //back button while on notebook
 #bbutton {
   background: none;
