@@ -1,4 +1,4 @@
-# CSE-toolbox
+# Laser Tag
 This project is a simple chrome extension developed for internal use at CW to make tagging messages a more fluid process during customer support in Intercom. <br/>
  <br/>
 ![CSE](https://user-images.githubusercontent.com/102861632/207401763-3ba3ed52-7f5d-4f23-b3a6-478ac2380583.png)
