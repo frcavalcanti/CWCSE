@@ -484,18 +484,16 @@ document.getElementById("cancel").addEventListener("click", function() {
   chrome.tabs.create({ url: newURL })
 });
 
-// Fetch test
-let updateGear = document.getElementById("updateGear")
+// // Fetch test
+// let updateGear = document.getElementById("updateGear")
 
-updateGear.addEventListener ('click', fetchJSON) // wipe it
-function fetchJSON () {
-  fetch('https://sheets.googleapis.com/v4/spreadsheets/1jxbEhZQ-xCCcC4OEMcBK2jWnIi6dc5J150Gjy9o2BIc/values/json?alt=json&key=AIzaSyBQw0MCJnEvqEsZPA6DorajdFNLL7jtuR0')
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-}
+// updateGear.addEventListener ('click', fetchJSON) // wipe it
+// function fetchJSON () {
+//   fetch('https://sheets.googleapis.com/v4/spreadsheets/1jxbEhZQ-xCCcC4OEMcBK2jWnIi6dc5J150Gjy9o2BIc/values/json?alt=json&key=AIzaSyBQw0MCJnEvqEsZPA6DorajdFNLL7jtuR0')
+//     .then((response) => response.json())
+//     .then((data) => console.log(data));
+// }
 
-
-// AIzaSyBQw0MCJnEvqEsZPA6DorajdFNLL7jtuR0 api key
 
 // Search
 
