@@ -453,7 +453,7 @@ thirtyDaysAgo = `${yyyyThirty}-${mmThirty}-${ddThirty}`; // for Untagged
 document.getElementById("warRoom").addEventListener("click", function() {
   document.getElementById("wrSquad").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/dashboard/466-warroom?calendar_start=${today}&calendar_end=${today}&squad=${wrSquad.value}`
+  let newURL = ``
   chrome.tabs.create({ url: newURL })
 })
 
@@ -462,7 +462,7 @@ document.getElementById("untagged").addEventListener("click", function() {
   document.getElementById("wrSquad").value;
   document.getElementById("qrEngineer").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/question/5234-chats-without-tags-de-atendimento?CALENDAR_START=${thirtyDaysAgo}&CALENDAR_END=${today}&ANALISTA=%25${qrEngineer.value}%25&SQUAD=%25${wrSquad.value}%25`
+  let newURL = ``
   chrome.tabs.create({ url: newURL })
 })
 
@@ -472,7 +472,7 @@ document.getElementById("pix").addEventListener("click", function() {
   document.getElementById("pixStart").value;
   document.getElementById("pixEnd").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/question/3430-get-btg-webhooks-from-document?ECDoc=${pixCNPJ.value}&CALENDAR_START=${pixStart.value}&CALENDAR_END=${pixEnd.value}`
+  let newURL = ``
   chrome.tabs.create({ url: newURL })
 })
 
@@ -480,9 +480,10 @@ document.getElementById("pix").addEventListener("click", function() {
 document.getElementById("cancel").addEventListener("click", function() {
   document.getElementById("cancelNSU").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/question/6383-validacao-de-cancelamento-cw?nsu=${cancelNSU.value}`
+  let newURL = ``
   chrome.tabs.create({ url: newURL })
 });
+
 
 // Search
 
