@@ -574,3 +574,5 @@ searchInput.addEventListener("input", (e) => {
     })
   }
 })
+
+// https://docs.google.com/spreadsheets/d/1jxbEhZQ-xCCcC4OEMcBK2jWnIi6dc5J150Gjy9o2BIc/edit?usp=sharing
