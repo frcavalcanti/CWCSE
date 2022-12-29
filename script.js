@@ -484,7 +484,7 @@ document.getElementById("cancel").addEventListener("click", function() {
 
 // Search
 let tagsJSON = []
-let url = 'https://opensheet.vercel.app/1jxbEhZQ-xCCcC4OEMcBK2jWnIi6dc5J150Gjy9o2BIc/json!A1:Z999'
+let url = 'https://frcavalcanti.github.io/CWCSE/tagDB.json'
 
 const getTags = async () => {
   try {
@@ -500,6 +500,7 @@ const getTags = async () => {
   });
 
   // Returns sorted data for JSON
+    console.log(data)
     return data
   } catch(e) {
     console.error(e)
