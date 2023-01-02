@@ -3,6 +3,9 @@ This project is a simple chrome extension developed for internal use at CW to ma
 
  <br/> For it's inception and creation, I received an Innovation award and it is currently used by around 100 users within the company's Support team. <br/>
  
+ ![LT](https://user-images.githubusercontent.com/102861632/210259229-7711746e-5c0d-426c-a0c6-17a3926a3429.png)
+
+ 
  <br/> It integrates Intercom, Github and Metabase in order to speed up message tagging which is later used by the Quality department to determine most common issues experienced by users of the company's services. Some internal resources have not been uploaded to this repo, but the functionality is still working so you can see its intended application. <br/>
  <br/>
 ![CSE](https://user-images.githubusercontent.com/102861632/207401763-3ba3ed52-7f5d-4f23-b3a6-478ac2380583.png)
