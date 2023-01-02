@@ -26,7 +26,7 @@
         <div id="queriesAll">
           <div class="queriesTitle" >
             <h1 style="color: white">Tags & Queries</h1>
-            <p> Clicking on icons - as well as buttons - saves field content (v.1.071222) </p>
+            <p> Clicking on icons/buttons saves content </p>
 
             <!-- Query Input Fields -->
             <div class="queryFields">
@@ -171,563 +171,148 @@
             <h2 class="tagNavArea" id="withdrawsHide"> WITHDRAWS </h2>
             <h2 class="tagNavArea" id="standaloneHide"> STANDALONE </h2>
           </div>
+
+          <template data-drop-template>
+            <div class="saveIt">
+              <p class="selectFinal tooltip" data-text=""> </p>
+            </div>
+          </template>
+
+
           <div id="headerThree">
             <!-- Accreditation -->
             <div class="tableMain" id="accreditationTableMain">
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-accreditation-accreditation>
                 <h3 class="selectTop tooltip" data-text="(accreditation)(accreditation)"> ACCREDITATION </h3>
-                <p class="selectFinal tooltip" data-text="Credenciamento negado"> (accr-denied)  </p>
-                <p class="selectFinal tooltip" data-text="Dúvidas gerais de credenciamento"> (accr-informations)  </p>
-                <p class="selectFinal tooltip" data-text="Troca de domicílio bancário pelo CRM/Chat"> (bank-account-update)  </p>
-                <p class="selectFinal tooltip" data-text="Análise inicial para a troca de titularidade"> (change-ownership-analysis) </p>
-                <p class="selectFinal tooltip" data-text="Início do processo de troca após a análise inicial">(change-ownership-data-collect)   </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre, mas não iniciou a troca de titularidade"> (change-ownership-informations)  </p>
-                <p class="selectFinal tooltip" data-text="Troca de POS entre cadastros após troca de titularidade aprovada"> (change-ownership-swap-pos)  </p>
-                <p class="selectFinal tooltip" data-text="Triagem inicial antes da troca de titularidade"> (change-ownership-triage)  </p>
-                <p class="selectFinal tooltip" data-text="Alteração de CNAE, que fica com o BKO"> (cnae-alteration)   </p>
-                <p class="selectFinal tooltip" data-text="Para quando há a alteração do representante legal"> (legal-representative-update) </p>
-                <p class="selectFinal tooltip" data-text="Validações de representante legal com clientes logados"> (legal-representative-validation)  </p>
-                <p class="selectFinal tooltip" data-text="Solicitar cadastro na ADIQ para BKO"> (no-adiq-registry)  </p>
-                <p class="selectFinal tooltip" data-text="Quando usuários solicitam parcerias de vários tipos conosco"> (partnership-infinitepay)  </p>
-                <p class="selectFinal tooltip" data-text="Quando o CNPJ está baixado na Receita Federal"> (rf-inactive)  </p>
-                <p class="selectFinal tooltip" data-text="Usuário logado solicita alteração de e-mail"> (update-email)  </p>
-                <p class="selectFinal tooltip" data-text="Usuário logado solicita alteração de telefone"> (update-phone)  </p>
-                <p class="selectFinal tooltip" data-text="Atualizações cadastrais que envolvam o Backoffice, como alteração de RL"> (user-acc-info-update)   </p>
-                <p class="selectFinal tooltip" data-text="Casos onde houve a declaração errada de valores para a Receita Federal"> (wrong-RF-declaration-value) </p>
-                <p class="selectFinal tooltip" data-text="Quando as informações entre o portal da ADIQ e nosso EC estão divergentes, causando erro em vendas"> (wrong-tid-info)  </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-accreditation-app>
                 <h3 class="selectTop tooltip" data-text="(accreditation)(app)"> APP </h3>
-                <p class="selectFinal tooltip" data-text="Acesso biométrico (Informações)"> (app-features-biometry)  </p>
-                <p class="selectFinal tooltip" data-text="Alteração de domicílio bancário pelo app">(change-bank-account)   </p>
-                <p class="selectFinal tooltip" data-text="Alterações de Infinite Tag pelo app"> (change-infinite-tag)  </p>
-                <p class="selectFinal tooltip" data-text="Alguém tenta (ou consegue) aplicar golpes em um cliente nosso"> (compromised-user-info)  </p>
-                <p class="selectFinal tooltip" data-text="Para troca de nome fantasia e/ou handles"> (establishment-name-change)  </p>
-                <p class="selectFinal tooltip" data-text="EC solicita alteração do telefone do app estando deslogado/sem acesso"> (login-update-cellphone)  </p>
-                <p class="selectFinal tooltip" data-text="Cliente esquece a senha para acesso no aplicativo"> (password-reset) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-accreditation-bank-account>
                 <h3 class="selectTop tooltip" data-text="(accreditation)(bank-account)"> BANK ACCOUNT </h3>
-                <p class="selectFinal tooltip" data-text="Não é uma instituição financeira aceita pela InfinitePay"> (cora-cip)  </p>
-                <p class="selectFinal tooltip" data-text="Para quando precisamos validar a UNICO de um EC para adicionar ao homebanking"> (hb-pending-validation)  </p>
-                <p class="selectFinal tooltip" data-text="Conta bancária cadastrada de forma incorreta ou cadastro de conta PF"> (incorrect-bank-account)  </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-accreditation-lgpd>
                 <h3 class="selectTop tooltip" data-text="(accreditation)(lgpd)"> LGPD </h3>
-                <p class="selectFinal tooltip" data-text="Solicitação de inativação de dados de cardholder em nosso banco"> (lgpd-cardholder)  </p>
-                <p class="selectFinal tooltip" data-text="Solicitação de inativação de dados de merchant em nosso banco"> (lgpd-merchant)  </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-accreditation-logged-out>
                 <h3 class="selectTop tooltip" data-text="(accreditation)(logged-out)">LOGGED OUT</h3>
-                <p class="selectFinal tooltip" data-text="Para validações de representante legal com clientes deslogados">(legal-representative-validation-logged-out) </p>
-                <p class="selectFinal tooltip" data-text="Clientes que estão deslogados e precisam fazer validação">(legal-representative-validation-logged-out) </p>
-                <p class="selectFinal tooltip" data-text="Cliente em contato via chat deslogado">(logged-out)(chat) </p>
-                <p class="selectFinal tooltip" data-text="Cliente em contato por e-mail diferente do que está vinculado ao cadastro">(logged-out)(email) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de contato via e-mail para cliente que não tem acesso ao login no app">(logged-out)(has-offenses) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de abertura de chat logado para cliente que tem acesso ao login no app">(logged-out)(no-offenses) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-accreditation-monitoring>
                 <h3 class="selectTop tooltip" data-text="(accreditation)(monitoring)"> MONITORING </h3>
-                <p class="selectFinal tooltip" data-text="EC blocked/descredenciado">  (merchant-blocked) </p>
               </div>
             </div>
             <!-- Delivery -->
             <div class="tableMain" id="deliveryTableMain">
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-delivery-logistics>
                 <h3 class="selectTop tooltip" data-text="(delivery)(logistics)"> LOGISTICS </h3>
-                <p class="selectFinal tooltip" data-text="Alterações de endereço com NF"> (change-address)(nf-issued)  </p>
-                <p class="selectFinal tooltip" data-text="Alterações de endereço sem NF"> (change-address)(no-nf)   </p>
-                <p class="selectFinal tooltip" data-text="Alteração de endereço com nota fiscal emitida"> (change-adress)(nf-issued)  </p>
-                <p class="selectFinal tooltip" data-text="Acareação de logística">(confrontation) </p>
-                <p class="selectFinal tooltip" data-text="Casos onde a entrega do EC está atrasada"> (delayed-delivery)  </p>
-                <p class="selectFinal tooltip" data-text="Destinatário ausente"> (delivery-attempt)(attempt-client)   </p>
-                <p class="selectFinal tooltip" data-text="Problemas mecânicos, chuvas torrenciais ou lugar não visitado"> (delivery-attempt)(attempt-sequoia)  </p>
-                <p class="selectFinal tooltip" data-text="NF não foi gerada - portanto a DO não existe ou quando possui pendência na SEFAZ"> (error-nf) </p>
-                <p class="selectFinal tooltip" data-text="Informações gerais sobre a entrega que não se enquadrem nas outras tags de logistics"> (log-informations)  </p>
-                <p class="selectFinal tooltip" data-text="Informações e dúvidas gerais que não alteram o status de DO e não precisam ser especificados"> (log-informations) </p>
-                <p class="selectFinal tooltip" data-text="Interceptação de entrega"> (log-interception)  </p>
-                <p class="selectFinal tooltip" data-text="Rastreio do pedido">(log-tracking)    </p>
-                <p class="selectFinal tooltip" data-text="Rastreio de pacote em qualquer parceira nossa"> (log-tracking)  </p>
-                <p class="selectFinal tooltip" data-text="Coleta de POS e também para POS duplicada"> (pos-collection)   </p>
-                <p class="selectFinal tooltip" data-text="Casos onde precisamos abrir coletas sem envio/troca de POS"> (pos-collection-wo-swap)  </p>
-                <p class="selectFinal tooltip" data-text="Tentativa de entrega pelos correios"> (post-office)(delivery-attempt)   </p>
-                <p class="selectFinal tooltip" data-text="Cliente se mudou, destinatário desconhecido no endereço ou local fechado"> (re-delivery)(absent-receiver)  </p>
-              </div>
-              <div class="tagTableSub">
-                <p class="selectFinal tooltip" data-text="Número inexistente, endereço insuficiente, endereço desconhecid ou CEP errado"> (re-delivery)(address-error)   </p>
-                <p class="selectFinal tooltip" data-text="Recusado port/sind ou recusado"> (re-delivery)(refused-delivery)  </p>
-                <p class="selectFinal tooltip" data-text="Erro na terceira tentativa de entrega"> (re-delivery)(third-attempt-error)   </p>
-                <p class="selectFinal tooltip" data-text="Zona rural, praça não atendida ou área de risco"> (re-delivery)(unavailable-area)  </p>
-                <p class="selectFinal tooltip" data-text="Insucesso na reentrega"> (re-delivery-unaccomplished)   </p>
-                <p class="selectFinal tooltip" data-text="Reenvio gerado após acareação"> (resend)(confrontation)  </p>
-                <p class="selectFinal tooltip" data-text="Pacote devolvido extraviado ou recuperado"> (resend)(lost)   </p>
-                <p class="selectFinal tooltip" data-text="Encomenda danificada, produto avariado ou produto divergente"> (resend)(product-problem)  </p>
-                <p class="selectFinal tooltip" data-text="Reenvio após erro na reentrega"> (resend)(re-delivery-error)   </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - tampa de impressora">(send-suply)(paper-roll-cover)  </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - Bateria"> (send-supply)(battery)   </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - tampa de bateria"> (send-supply)(battery-cover)  </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - carregador"> (send-supply)(charger)   </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - chip Algar"> (send-supply)(chip-algar)  </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - chip Hologram"> (send-supply)(chip-hologram)   </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - bobina"> (send-supply)(paper-roll)  </p>
-                <p class="selectFinal tooltip" data-text="Envio de insumo - carregador de mesa"> (send-supply)(table-charger)   </p>
               </div>
             </div>
             <!-- POS Doubt -->
             <div class="tableMain" id="posTableMain">
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-pos-pos>
                 <h3 class="selectTop tooltip" data-text="(pos-doubt)(pos)"> P2 / X990	</h3>
-                <p class="selectFinal tooltip" data-text="Instruções de ativação de POS modelo p2"> (p2)(activation)</p>
-                <p class="selectFinal tooltip" data-text="Workflow de problema de bateria na P2"> (p2)(battery-issues)</p>
-                <p class="selectFinal tooltip" data-text="Processo de limpeza de cache na p2"> (p2)(cache-cleaning)</p>
-                <p class="selectFinal tooltip" data-text="Para erros na P2 gerados devido configurações alteradas (ex: tamanho do texto)">(p2)(configuration-issue) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de conexão via chip na p2. (Chip da CW)">(p2)(connection)(chip)(gif)(cw) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de conexão via chip na P2 (Chip próprio)">(p2)(connection)(chip)(gif)(proprio) </p>
-                <p class="selectFinal tooltip" data-text="Problemas gerais de conexão via chip na P2 (chip próprio)">(p2)(connection-issues)(chip)(proprio) </p>
-                <p class="selectFinal tooltip" data-text="Para caso de problemas com chips no slot errado da P2"> (p2)(connection-issues)(chip-nano)</p>
-                <p class="selectFinal tooltip" data-text="ECs que deletaram o app da InfinitePay de sua P2">(p2)(deleted-app) </p>
-                <p class="selectFinal tooltip" data-text="Tag para especificar problemas de mal uso na P2. Ex: Cair no chão, quebrar a tela, dano na entrada do carregador, etc.  "> (p2)(misuse)</p>
-                <p class="selectFinal tooltip" data-text="PED Tamper em p2">(p2)(ped-tampered) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de cancelamento de venda na p2 por NFC (aproximação)."> (p2)(refund-nfc)</p>
-                <p class="selectFinal tooltip" data-text="P2 lenta ou travando">(p2)(slow-or-freezing) </p>
-                <p class="selectFinal tooltip" data-text="POS irrecuperável (perda, roubo, acidentes onde a culpa não é do EC)">(p2)(unrecoverable) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de atualização de POS modelo p2">(p2)(update) </p>
-                <p class="selectFinal tooltip" data-text="Informações gerais sobre a P2">(p2-informations) </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de POS não liga (apenas p2 e s920)">(s920-p2)(battery-issues) </p>
-                <p class="selectFinal tooltip" data-text="Passo a passo de ativação de POS modelo Smart (exceto gif)">(smart)(activation-information) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de ativação de POS Smart">(smart)(activation-information)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de bateria descarregando muito rápido (apenas modelos Smart)">(smart)(battery-issues) </p>
-                <p class="selectFinal tooltip" data-text="Gif de alteração de prioridade de operadora do chip">(smart)(chip-priority)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de configuração do wifi em POS modelo Smart">(smart)(connection-information)(wifi) </p>
-                <p class="selectFinal tooltip" data-text="Problemas gerais de conexão via chip (chip próprio)">(smart)(connection-informations)(chip)(proprio) </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de problemas de conexão via chip (apenas modelos Smart, chip CW)">(smart)(connection-issues)(chip)(cw) </p>
-                <p class="selectFinal tooltip" data-text="Instruções para realização de venda via PIX na POS.">(smart)(pix-informations) </p>
-                <p class="selectFinal tooltip" data-text="Instruções para cancelamento de venda em POS modelo Smart">(smart)(refund-process) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de atualização de POS Smart">(smart)(update) </p>
-                <p class="selectFinal tooltip" data-text="Para quando solicitamos o teste de hardware das POS smart (00 77777 7777)">(smart-hardware-test) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções para ativação de POS x990.">(x990)(activation)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação de dados de consumo da bateria de POS x990">(x990)(battery-issues) </p>
-                <p class="selectFinal tooltip" data-text="Processo de limpeza de cache na x990.">(x990)(cache-cleaning) </p>
-                <p class="selectFinal tooltip" data-text="Para erros na x990 gerados devido configurações alteradas (ex: tamanho do texto)"> (x990)(configuration-issue)</p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de conexão via chip na X990 (Chip próprio)">(x990)(connection)(chip)(gif)(proprio) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de acesso à área de informações sobre conexão de chip da x990. (chip CW)">(x990)(connection-informations)(chip)(gif)(cw) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de acesso à área de informações sobre conexão Wifi da x990."> (x990)(connection-informations)(wifi)(gif)</p>
-                <p class="selectFinal tooltip" data-text="Problemas gerais de conexão via chip na X990 (chip próprio)">(x990)(connection-issues)(chip)(proprio) </p>
-                <p class="selectFinal tooltip" data-text="ECs que deletaram o app da InfinitePay de sua x990">(x990)(deleted-app) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções sobre realização de venda com cartão na x990."> (x990)(emv-informations)(gif)</p>
-                <p class="selectFinal tooltip" data-text="Tag para especificar problemas de mal uso na x990. Ex: Cair no chão, quebrar a tela, dano na entrada do carregador, etc.  ">(x990)(misuse) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções sobre realização de venda por aproximação na x990.">(x990)(nfc-informations)(gif) </p>
-                <p class="selectFinal tooltip" data-text="PED Tamper em x990">(x990)(ped-tampered) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções sobre cancelamento de venda na x990.">(x990)(refund)(gif) </p>
-                <p class="selectFinal tooltip" data-text="x990 lenta ou travando">(x990)(slow-or-freezing) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de ajuste do fuso horário da máquina para regiões fora do horário de Brasília.">(x990)(timezone) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de ajuste do fuso horário da máquina para regiões que seguem o horário de Brasília">(x990)(timezone)(gmt-3) </p>
-                <p class="selectFinal tooltip" data-text="POS irrecuperável (perda, roubo, acidentes onde a culpa não é do EC)">(x990)(unrecoverable) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções sobre atualização de POS modelo x990">(x990)(update)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação do Serial Number (SN) da x990.">(x990-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-pos-authorization>
                 <h3 class="selectTop tooltip" data-text="(pos-doubt)(authorization)"> AUTHORIZATION	 </h3>
-                <p class="selectFinal tooltip" data-text="Cliente solicita o código AUT (auth) da venda para uso em relatórios externos"> (auth-code-information) </p>
-                <p class="selectFinal tooltip" data-text="Explicação sobre venda para parentes e a recusa de transações consideradas atípicas">(denied-monitoring-informations) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o limite de valor para vendas com cartão presente"> (limit-amount-nf-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-pos-s920>
+                <h3 class="selectTop tooltip" data-text="(pos-doubt)(pos)"> S920	</h3>
+              </div>
+              <div class="tagTableSub" data-drop-pos-pix>
                 <h3 class="selectTop tooltip" data-text="(pos-doubt)(pix)"> PIX	 </h3>
-                <p class="selectFinal tooltip" data-text="Instruções para realização de venda via PIX na POS">  (smart)(pix-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-pos-refund>
                 <h3 class="selectTop tooltip" data-text="(pos-doubt)(refund)"> REFUND	</h3>
-                <p class="selectFinal tooltip" data-text="Cliente que solicita cancelamento de venda mas tem billing pendente.">(billing-refund) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre cancelamento de venda em plano d+0">(d0-refund-information) </p>
-                <p class="selectFinal tooltip" data-text="Interesse em cancelamento de venda em plano d+0">(d0-refund-interest) </p>
-                <p class="selectFinal tooltip" data-text="Confirmação de cancelamento de venda para cliente que tem recebíveis suficientes a serem descontados">(enough-funds) </p>
-                <p class="selectFinal tooltip" data-text="Cliente sem recebíveis suficientes para solicitação de cancelamento de venda">(insufficient-funds) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre prazo e fluxo de estorno de vendas canceladas">(refund-informations) </p>
-                <p class="selectFinal tooltip" data-text="Cliente que solicita cancelamento de uma venda">(refund-interest) </p>
-                <p class="selectFinal tooltip" data-text="Dados da conta bancária da CW para clientes que optem por fazer transferência ao solicitar cancelamento de venda">(transfer-cw-details) </p>
-
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-pos-sales>
                 <h3 class="selectTop tooltip" data-text="(pos-doubt)(sales)"> SALES </h3>
-                <p class="selectFinal tooltip" data-text="Explicação sobre a diferença de preço da segunda POS"> (pos-expensive)  </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o preço das máquinas e do Link de Pagamento"> (pos-price-informations) </p>
-              </div>
-              <div class="tagTableSub">
-                <h3 class="selectTop tooltip" data-text="(pos-doubt)(pos)"> S920 </h3>
-                <p class="selectFinal tooltip" data-text="Gif de instruções para ativação de POS s920"> (s920)(activation)(gif)  </p>
-                <p class="selectFinal tooltip" data-text="Workflow de problemas de bateria da s920 que usamos em notas"> (s920)(battery-issues) </p>
-                <p class="selectFinal tooltip" data-text="Processo de triagem de problemas na bateria da s920"> (s920)(battery-triage) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de acesso à área de informações sobre conexão da s920"> (s920)(connection)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções sobre conexão via Wifi na s920"> (s920)(connection)(wifi)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de problemas de conexão via chip na s920"> (s920)(connection-issues)(chip) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções sobre conexão via chip na s920"> (s920)(connection-issues)(chip)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Relacionado ao problema da tarja amarela na s920"> (s920)(connection-issues)(wifi)(chip) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções sobre realização de venda com cartão na s920"> (s920)(emv-informations)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Problemas no teclado físico da s920"> (s920)(keyboard-issues) </p>
-                <p class="selectFinal tooltip" data-text="Problemas de mal uso na s920 Ex: Cair no chão, quebrar a tela, danos gerais, etc"> (s920)(misuse)    </p>
-                <p class="selectFinal tooltip" data-text="PED Tamper em s920"> (s920)(ped-tampered) </p>
-                <p class="selectFinal tooltip" data-text="Cliente perguntando sobre venda via PIX/QR Code na s920"> (s920)(pix-informations) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de cancelamento de venda na s920"> (s920)(refund)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de reimpressão de recibo de venda na s920"> (s920)(reprint)(gif)  </p>
-                <p class="selectFinal tooltip" data-text="s920 lenta ou travando"> (s920)(slow-or-freezing) </p>
-                <p class="selectFinal tooltip" data-text="Carga de sistema na POS s920"> (s920)(software-charge)  </p>
-                <p class="selectFinal tooltip" data-text="Instruções para cancelamento de venda na POS s920 (exceto gif)"> (s920)(transaction-refund) </p>
-                <p class="selectFinal tooltip" data-text="POS irrecuperável (perda, roubo, acidentes onde a culpa não é do EC)"> (s920)(unrecoverable) </p>
-                <p class="selectFinal tooltip" data-text="Informando ao cliente que sua s920 precisa ser atualizada e setando expectativa de tempo"> (s920)(update) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de update da s920 "> (s920)(update)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Instruções para atualização de s920 que esteja na versão 7.4.17."> (s920)(update-7417) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação do Serial Number (SN) da s920"> (s920-informations) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de acesso à área de informações sobre métricas e estabelecimento e reinicialização da s920"> (s920-informations)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de POS não liga (apenas p2 e s920)"> (s920-p2)(battery-issues) </p>
-              </div>
-              <div class="tagTableSub">
-                <h3 class="selectTop tooltip" data-text="The cake is a lie"> NÃO ESPECÍFICAS	 </h3>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de falha na ativação."> (activation-failed)  </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre aquisição de segunda POS."> (buy-second-pos)  </p>
-                <p class="selectFinal tooltip" data-text="Uso exclusivo da notificação errôena sobre troca de chip do dia 18/11"> (chip-exchange-notification-18-11)  </p>
-                <p class="selectFinal tooltip" data-text="Para casos onde enviamos um chip Algar gratuito para chips Hologram desativados"> (chip-hologram-free-exchange)  </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de problema de conexão via Wifi"> (connection-issues)(wifi)  </p>
-                <p class="selectFinal tooltip" data-text="Para casos de chips inativados"> (deactivated-chip)  </p>
-                <p class="selectFinal tooltip" data-text="Instruções de cálculo de repasse de taxas"> (fees-calculator)  </p>
-                <p class="selectFinal tooltip" data-text="Para quando abrimos o WF interno (de notas) para validação do Guardian sobre casos de Bateria"> (internal-WF)(battery-issues)  </p>
-                <p class="selectFinal tooltip" data-text="Para quando abrimos o WF interno (de notas) para validação do Guardian sobre casos de Ped Tamper"> (internal-WF)(ped-tampered)  </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre limite de valor para vendas (exceto por link de pagamento)"> (limit-amount-informations)  </p>
-                <p class="selectFinal tooltip" data-text="Cliente reclama do recebimento da máquina sem chip"> (no-SIM-POS-dispute)  </p>
-                <p class="selectFinal tooltip" data-text="Para casos de chips inativados permanentemente, conforme anúncio do Luis Rosa"> (permanent-chip-deactivation)  </p>
-                <p class="selectFinal tooltip" data-text="Chat em que foi necessário solicitar troca de POS"> (pos-swap)  </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de falha na impressão"> (printing-issues)  </p>
-                <p class="selectFinal tooltip" data-text="Para upgrades de POS"> (promotion-upgrade-pos)  </p>
-                <p class="selectFinal tooltip" data-text="Questões sobre aluguel de POS"> (rent-informations)  </p>
-                <p class="selectFinal tooltip" data-text="Solicitação de troca de informações da bobina."> (roller-paper)(change-informations)  </p>
-                <p class="selectFinal tooltip" data-text="Instruções de limpeza do compartimento de bobina"> (roller-paper)(printing-issues)  </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o fornecimento de bobinas e detalhes sobre as medidas."> (roller-paper-informations)  </p>
-                <p class="selectFinal tooltip" data-text="Instruções para envio de logs da máquina"> (send-logs)  </p>
-                <p class="selectFinal tooltip" data-text="Para quando o nosso EC recebe a POS de troca, mas não consegue ativá-la"> (swapped-pos-activation)  </p>
-                <p class="selectFinal tooltip" data-text="Casos de workflow de problemas no touchscreen."> (touchscreen-impaired)  </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre venda digitada"> (typed-sale)  </p>
-                <p class="selectFinal tooltip" data-text="Questões sobre a garantia de POS"> (warranty-informations)  </p>
-
               </div>
             </div>
             <!-- Sales Error -->
             <div class="tableMain" id="salesErrorTableMain">
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-error-authorization>
                 <h3 class="selectTop tooltip" data-text="(sales-error)(authorization)"> AUTHORIZATION </h3>
-                <p class="selectFinal tooltip" data-text="Instabilidade geral que afetam transações"> (auth-instability) </p>
-                <p class="selectFinal tooltip" data-text="Para vendas negadas pelo emissor e que não tenham uma tag própria"> (denied-transaction-authorizer) </p>
-                <p class="selectFinal tooltip" data-text="Cardholder vem falar conosco sobre não conseguir transacionar (link/pos)"> (denied-transaction-cardholder) </p>
-                <p class="selectFinal tooltip" data-text="Erro de transação 03 (não-adiq)"> (error-03) </p>
-                <p class="selectFinal tooltip" data-text="Problema com MID, TID, MCC, cadastro na adiq ou departamento impedindo vendas com Hipercard"> (error-03-adiq) </p>
-                <p class="selectFinal tooltip" data-text="Venda negada por erro 05"> (error-05) </p>
-                <p class="selectFinal tooltip" data-text="Erro 06 em vendas adiq"> (error-06-adiq)  </p>
-                <p class="selectFinal tooltip" data-text="Venda negada por saldo insuficiente"> (error-51)  </p>
-                <p class="selectFinal tooltip" data-text="Venda negada por senha inválida"> (error-55) </p>
-                <p class="selectFinal tooltip" data-text="Erro de transação 57"> (error-57) </p>
-                <p class="selectFinal tooltip" data-text="Erro de transação 63 do Banco Original ou PicPay"> (error-63)(original-picpay) </p>
-                <p class="selectFinal tooltip" data-text="Erro de transação 63 do Banco Pan"> (error-63)(pan-bank) </p>
-                <p class="selectFinal tooltip" data-text="Erro de transação 63 do PicPay"> (error-63)(picpay-bank)  </p>
-                <p class="selectFinal tooltip" data-text="Erro de transação 82"> (error-82) </p>
-                <p class="selectFinal tooltip" data-text="Erro de transação 83"> (error-83) </p>
-                <p class="selectFinal tooltip" data-text="Cobrança indevida onde não houve desfazimento (venda denied, refunded, ou failed)"> (improper-charge)  </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-error-connection>
                 <h3 class="selectTop tooltip" data-text="(sales-error)(connection)"> CONNECTION </h3>
-                <p class="selectFinal tooltip" data-text="Para casos de chip inativo"> (chip-inactive) </p>
-                <p class="selectFinal tooltip" data-text="Para procedimentos de chip não necessariamente relacionados a um modelo de POS específico"> (connection-issues)(chip) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub"data-drop-error-monitoring>
                 <h3 class="selectTop tooltip" data-text="(sales-error)(monitoring)"> MONITORING </h3>
-                <p class="selectFinal tooltip" data-text="Vendas negadas por risco que foram feitas por ecommerce"> (denied-monitoring-ecommerce) </p>
-                <p class="selectFinal tooltip" data-text="Vendas negadas por risco que foram feitas pelo link de pagamento do app"> (denied-monitoring-payment-link) </p>
-                <p class="selectFinal tooltip" data-text="Vendas negadas por risco que foram feitas pelo link de pagamento web"> (denied-monitoring-payment-link-web) </p>
-                <p class="selectFinal tooltip" data-text="Casos de limite de venda presencial"> (present-card-limit) </p>
-                <p class="selectFinal tooltip" data-text="Autofinanciamento"> (working-capital)  </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-error-pix>
                 <h3 class="selectTop tooltip" data-text="(sales-error)(app)"> PIX </h3>
-                <p class="selectFinal tooltip" data-text="Erros de cash-ins de PIX"> (pix-cashin-error) </p>
-                <p class="selectFinal tooltip" data-text="Erros de transfer cashout de pix onde o EC já está validado"> (pix-cashout-error) </p>
-                <p class="selectFinal tooltip" data-text="Quando o EC tem problemas com a chave pix"> (pix-key-issues) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub"data-drop-error-pos>
                 <h3 class="selectTop tooltip" data-text="(sales-error)(pos)"> POS </h3>
-                <p class="selectFinal tooltip" data-text="Problemas gerais com vendas por cartão presencial"> (emv-issues) </p>
-                <p class="selectFinal tooltip" data-text="Problemas gerais com vendas por aproximação"> (nfc-issues)  </p>
-                <p class="selectFinal tooltip" data-text="Casos de chip nano na P2"> (p2)(connection-issues)(chip) </p>
-                <p class="selectFinal tooltip" data-text="Gif de como fazer vendas com cartão físico"> (p2)(emv-informations)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Gif de como fazer vendas por aproximação"> (p2)(nfc-informations)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Gif de alteração de prioridade de operadora do chip"> (smart)(chip-priority)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Desfazimento"> (transaction-reversal) </p>
               </div>
             </div>
             <!-- Services -->
             <div class="tableMain" id="serviceTableMain">
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-app>
                 <h3 class="selectTop tooltip" data-text="(services)(app)"> APP </h3>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de acesso à DIRF via app."> (app-features) </p>
-                <p class="selectFinal tooltip" data-text="Usado para quando ensinamos usuários a logar no aplicativo"> (app-how-to-login) </p>
-                <p class="selectFinal tooltip" data-text="Instabilidade no sistema do nosso aplicativo."> (app-instability) </p>
-                <p class="selectFinal tooltip" data-text="Usada quando usuários esquecem o telefone registrado conosco"> (app-login-forgot-number) </p>
-                <p class="selectFinal tooltip" data-text="Usado quando usuários tem dificuldades com o SMS relacionado ao login do app"> (app-login-SMS-issue) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de como logar no mesmo cadastro em diferentes aparelhos"> (app-login-two-accounts) </p>
-                <p class="selectFinal tooltip" data-text="Orientações de limpeza de cache do aplicativo."> (clear-data) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de como utilizar a calculadora de taxas (exceto gif)."> (fees-calculator-informations) </p>
-                <p class="selectFinal tooltip" data-text="Gif de instruções de utilização da calculadora de taxas"> (fees-calculator-informations)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Tag geral para atendimentos do InfiniteTap"> (infinitetap) </p>
-                <p class="selectFinal tooltip" data-text="Questionamentos sobre a alteração das taxas pós-lançamento"> (infinitetap)(fee-dispute) </p>
-                <p class="selectFinal tooltip" data-text="Para questões relacionadas às taxas aumentadas do InfiniteTap"> (infinitetap)(fees) </p>
-                <p class="selectFinal tooltip" data-text="Informações e dúvidas gerais"> (infinitetap)(general-informations) </p>
-                <p class="selectFinal tooltip" data-text="Para telefones não suportados/sem NFC para o InfiniteTap"> (infinitetap)(phone-not-supported) </p>
-                <p class="selectFinal tooltip" data-text="Bloqueio de segurança do InfiniteTap"> (infinitetap)(security-block) </p>
-                <p class="selectFinal tooltip" data-text="Para dúvidas do InfiniteTap. Atenção: somente o @cse-beta pode usar essa tag!"> (infinitetap-tips) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de acesso ao relatório de vendas pelo aplicativo."> (internal-sales-report) </p>
-                <p class="selectFinal tooltip" data-text="Para casos onde o nosso EC tem problemas com a última versão do app devido o status MPOS"> (mpos-security-crash) </p>
-                <p class="selectFinal tooltip" data-text="Para casos de criação da senha no nosso app"> (password-registration) </p>
-                <p class="selectFinal tooltip" data-text="Instruções sobre como vender via Link de Pagamento (exceto gif)."> (payment-link-app-informations) </p>
-                <p class="selectFinal tooltip" data-text="Para quando há erros ao criar o link de pagamento"> (payment-link-creation-error)  </p>
-                <p class="selectFinal tooltip" data-text="Instruções sobre como criar links de pagamento"> (payment-link-creation-tutorial) </p>
-                <p class="selectFinal tooltip" data-text="Instruções sobre como criar links de pagamento (gif)"> (payment-link-creation-tutorial)(gif) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre as taxas aplicadas a vendas feitas pelo Link de Pagamento."> (payment-link-fees-informations) </p>
-                <p class="selectFinal tooltip" data-text="Instruções sobre como pagar um link de pagamento (cardholder)"> (payment-link-how-to-pay) </p>
-                <p class="selectFinal tooltip" data-text="Instruções sobre como alterar parcelas no link de pagamento"> (payment-link-installment-information) </p>
-                <p class="selectFinal tooltip" data-text="Referente ao limite de R$10.000,00 do link de pagamento"> (payment-link-limit-amount) </p>
-                <p class="selectFinal tooltip" data-text="Erro específico desde dia 5/11 relativo a vendas por payment link que não aparecem no CRM"> (payment-link-missing-transaction) </p>
-                <p class="selectFinal tooltip" data-text="Relacionado às dicas de segurança dos links de pagamento"> (payment-link-security-tips) </p>
-                <p class="selectFinal tooltip" data-text="Atendimentos relacionados ao link de pagamento web"> (payment-link-web) </p>
-                <p class="selectFinal tooltip" data-text="Para dúvidas sobre o link de pagamento web"> (payment-link-web-informations) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de cancelamento de transação via app"> (transaction-refund) </p>
-                <p class="selectFinal tooltip" data-text="Instruções para atualização do nosso aplicativo"> (update) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-churn>
                 <h3 class="selectTop tooltip" data-text="(services)(churn)"> CHURN </h3>
-                <p class="selectFinal tooltip" data-text="Cliente bloqueado sem direito a coleta da POS e estorno"> (blocked-wo-pos-reversal) </p>
-                <p class="selectFinal tooltip" data-text="Questionamento do motivo do pedido de cancelamento"> (churn-reason) </p>
-                <p class="selectFinal tooltip" data-text="Coleta de POS negada"> (collect-denied) </p>
-                <p class="selectFinal tooltip" data-text="Recompra de POS negada"> (repurchase-denied) </p>
-                <p class="selectFinal tooltip" data-text="Cliente interessado no processo de recompra da POS"> (repurchase-interest) </p>
-                <p class="selectFinal tooltip" data-text="Confirmação de recompra aprovada"> (repurchase-processed) </p>
-                <p class="selectFinal tooltip" data-text="Orientando o cliente de que não pedimos o código de acesso do app"> (whatsapp) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-dirf>
                 <h3 class="selectTop tooltip" data-text="(services)(dirf)"> DIRF </h3>
-                <p class="selectFinal tooltip" data-text="Instruções de como gerar a DIRF em nosso aplicativo (exceto gif)"> (dirf-generate) </p>
-                <p class="selectFinal tooltip" data-text="Detalhamento do que é e para que serve a DIRF"> (dirf-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub"data-drop-services-ecommerce>
                 <h3 class="selectTop tooltip" data-text="(services)(ecommerce)"> E-COMMERCE </h3>
-                <p class="selectFinal tooltip" data-text="Para casos onde nosso cliente precisa de ajuda com as credenciais de ecommerce">  (ecommerce-credentials)</p>
-                <p class="selectFinal tooltip" data-text="Encaminhamento de chat para a fila de e-commerce"> (ecommerce-queue) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o plugin com o Ecomplus"> (ecomplus-informations) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o plugin com o Magento"> (magento-informations) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o plugin com o Wbuy"> (wbuy-informations) </p>
-                <p class="selectFinal tooltip" data-text="Instruções de instalação do plugin de pagamento para WooCommerce"> (woocommerce)(installing) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o plugin com o Woocommerce"> (woocommerce-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-fees>
                 <h3 class="selectTop tooltip" data-text="(services)(fees)"> FEES </h3>
-                <p class="selectFinal tooltip" data-text="Instruções de uso da calculadora comparativa de taxas do nosso site"> (payment-link-fees-calculator)  </p>
-                <p class="selectFinal tooltip" data-text="Para casos onde o EC tenta negociar taxas conosco"> (fee-negotiation) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-infinitecard>
                 <h3 class="selectTop tooltip" data-text="(services)(infinitecard)"> INFINITECARD </h3>
-                <p class="selectFinal tooltip" data-text="Duvidas sobre cartões adicionais"> (additional-card-info) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação ou questionamentos sobre bloqueios do InfiniteCard"> (card-block) </p>
-                <p class="selectFinal tooltip" data-text="Falha ao tentar criar o cartão (emissão/Issuing)"> (card-creation-error) </p>
-                <p class="selectFinal tooltip" data-text="Para quando há falha ao tokenizar o cartão (Google wallet/Apple pay)"> (card-tokenization-error) </p>
-                <p class="selectFinal tooltip" data-text="Falha na transação do InfiniteCard"> (failed-infinitecard-transaction) </p>
-                <p class="selectFinal tooltip" data-text="Para questões relacionadas ao nosso novo cashback de 1.5%"> (infinitecard)(cashback) </p>
-                <p class="selectFinal tooltip" data-text="Contestação de transação no InfiniteCard (chargeback)"> (infinitecard-chargeback) </p>
-                <p class="selectFinal tooltip" data-text="Para contatos proativos sobre feedback de issuing"> (infinitecard-feedback) </p>
-                <p class="selectFinal tooltip" data-text="Para informações gerais do InfiniteCard"> (infinitecard-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-informations>
                 <h3 class="selectTop tooltip" data-text="(services)(informations)"> INFORMATIONS </h3>
-                <p class="selectFinal tooltip" data-text="Dúvidas sobre participação e regulamentação da promoção de Black Friday 2022"> (black-friday-2022-information) </p>
-                <p class="selectFinal tooltip" data-text="Dúvidas sobre as bandeiras de cartão aceitas."> (card-brands) </p>
-                <p class="selectFinal tooltip" data-text="Envio do link do nosso Contrato de Afiliação"> (contract-link) </p>
-                <p class="selectFinal tooltip" data-text="Para clientes nossos que sugerem funções e indicamos o site de feedback"> (customer-suggestion) </p>
-                <p class="selectFinal tooltip" data-text="Para casos de recepção de documentos referentes a casos legais ou ofícios"> (legal-documents) </p>
-                <p class="selectFinal tooltip" data-text="Dúvidas sobre nossos canais de atendimento"> (service-channels) </p>
-                <p class="selectFinal tooltip" data-text="Para dúvidas relacionadas ao nosso site"> (site-informations) </p>
-                <p class="selectFinal tooltip" data-text="Para qualquer dúvida relacionada com transações no geral"> (transaction-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-lending>
                 <h3 class="selectTop tooltip" data-text="(services)(lending)"> LENDING </h3>
-                <p class="selectFinal tooltip" data-text="Casos onde há erro na hora de pagar os valores do Autopilot">(autopilot-payment-error) </p>
-                <p class="selectFinal tooltip" data-text="Cliente com dúvidas sobre o prazo de pagamento do empréstimo">(deadline-details) </p>
-                <p class="selectFinal tooltip" data-text="Casos onde o Autopilot cobra valores a mais do cliente">(excessive-discount) </p>
-                <p class="selectFinal tooltip" data-text="Para casos de falhas de pagamento de lending relacionados ao QR code/PIX do app">(failed-lending-pix-payment) </p>
-                <p class="selectFinal tooltip" data-text="Para casos onde o EC está em deadletter, sem acesso ao lending">(lending-deadletter)</p>
-                <p class="selectFinal tooltip" data-text="Cliente solicitando informações sobre o empréstimo inteligente">(lending-informations) </p>
-                <p class="selectFinal tooltip" data-text="Instabilidade no sistema de empréstimo inteligente">(lending-instability) </p>
-                <p class="selectFinal tooltip" data-text="Cliente mencionando interesse em contratar o empréstimo inteligente">(lending-interest) </p>
-                <p class="selectFinal tooltip" data-text="Casos de lending onde um cliente que antes tinha acesso ao empréstimo agora não tem, pois está em Market 1">(market1-unavailable) </p>
-                <p class="selectFinal tooltip" data-text="Usada para casos onde enviamos nosso cliente para a CERC devido lendings em atraso">(sent-to-cerc) </p>
-                <p class="selectFinal tooltip" data-text="EC foi enviado para a cobrança de empresa parceira e para CERC em outras máquinas">(sent-to-cerc-and-partner) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-phone>
                 <h3 class="selectTop tooltip" data-text="(services)(phone-support)"> PHONE SUPP </h3>
-                <p class="selectFinal tooltip" data-text="Chat aberto após insucesso no contato telefônico do NPS">(nps-no-return) </p>
-                <p class="selectFinal tooltip" data-text="Atendimentos encaminhados para a Ouvidoria">(ombudsman-contact) </p>
-                <p class="selectFinal tooltip" data-text="Usada quando ligamos proativamente para um cliente">(proactive-phone-contact) </p>
-                <p class="selectFinal tooltip" data-text="Explicando ao cliente que a Central Telefônica ainda está restrita devido à fase de testes"> (restricted-access)</p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-receivables>
                 <h3 class="selectTop tooltip" data-text="(services)(receivables)"> RECEIVABLES </h3>
-                <p class="selectFinal tooltip" data-text="Programa de afiliação (Informações)">(referral-program-informations) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-services-web>
                 <h3 class="selectTop tooltip" data-text="(services)(web)"> WEB </h3>
-                <p class="selectFinal tooltip" data-text="Para quando ensinamos um EC a fazer a troca de titularidade pela dash web"> (dash-cnpj-exchange) </p>
-                <p class="selectFinal tooltip" data-text="Tag para informações referentes a dashboard web."> (dash-information) </p>
-                <p class="selectFinal tooltip" data-text="Problemas no login da Dashboard (control room)"> (dash-login-issues) </p>
-                <p class="selectFinal tooltip" data-text="Para quando ensinamos um EC a fazer a desativação de POS pela dash web"> (dash-pos-deactivation) </p>
-                <p class="selectFinal tooltip" data-text="Para quando ensinamos nossos ECs a imprimir o QR code que geramos pela dash web"> (dash-QR-code-print) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o relatório de vendas exportado da Dashboard"> (dash-sales-report) </p>
-                <p class="selectFinal tooltip" data-text="Para quando uma tentativa de pagamento pelo Link web é negada"> (payment-link-web-denied) </p>
-
               </div>
             </div>
             <!-- Withdraws -->
             <div class="tableMain" id="withdrawsTableMain">
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-withdraws-cerc>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(cerc)"> CERC </h3>
-                <p class="selectFinal tooltip" data-text="Informações sobre fluxo de pagamento durante análise de contestação da CERC Para quando depositamos na conta normal devido a demora"> (cerc-error-paid) </p>
-                <p class="selectFinal tooltip" data-text="Informações gerais sobre CERC e desconto de recebíveis associados a contratos CERC"> (cerc-informations) </p>
-                <p class="selectFinal tooltip" data-text="Contestação de cobrança da CERC"> (cerc-plea) </p>
-                <p class="selectFinal tooltip" data-text="Contestação CERC ainda sem retorno"> (cerc-plea)(no-response) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-withdraws-chargeback>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(chargeback)"> CHARGEBACK </h3>
-                <p class="selectFinal tooltip" data-text="Dúvidas sobre como pagar um chargeback"> (cbk-payment-methods)</p>
-                <p class="selectFinal tooltip" data-text="Informações gerais sobre chargeback que não se enquadrem nas demais tags dessa categoria"> (chargeback-informations)</p>
-                <p class="selectFinal tooltip" data-text="Instruções para abertura de disputa de chargeback via app"> (dispute-documents-app)</p>
-                <p class="selectFinal tooltip" data-text="Para casos onde solicitamos documentação para disputa de CBK para o EC no chat"> (dispute-documents-request)</p>
-                <p class="selectFinal tooltip" data-text="Cliente que sofreu chargeback de tipo fraude"> (fraudulent-transaction-chargeback)</p>
-                <p class="selectFinal tooltip" data-text="Dicas para o cliente se precaver contra chargebacks em vendas via link"> (payment-link-safety-tips)</p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-withdraws-collection>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(collection)"> COLLECTION </h3>
-                <p class="selectFinal tooltip" data-text="Encaminhamento de tratativa de cobrança para parceira externa para negociação de valores">(collection-negotiation) </p>
-                <p class="selectFinal tooltip" data-text="Comprovante/recibo de pagamento referente a billing">(collection-receipt) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre uma billing específica e como quitá-la">(pending-billing-informations) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre a parceira de cobrança Leader"> (pending-billing-leader)</p>
-                <p class="selectFinal tooltip" data-text="Informações sobre a parceira de cobrança Meireles e Freitas"> (pending-billing-meireles)</p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-withdraws-fees>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(fees)"> FEES </h3>
-                <p class="selectFinal tooltip" data-text="Link do vídeo sobre nossas taxas">(fee-video) </p>
-                <p class="selectFinal tooltip" data-text="Informações gerais sobre as taxas aplicadas e antecipação"> (fees-anticipation)</p>
-                <p class="selectFinal tooltip" data-text="Detalhamento sobre taxas aplicadas"> (fees-details)</p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-withdraws-homebanking>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(homebanking)"> HOMEBANKING </h3>
-                <p class="selectFinal tooltip" data-text="Para casos onde a mintagem dos BRLCs atrasa, deixando a transfer como success mas o valor indisponível">(delayed-minting) </p>
-                <p class="selectFinal tooltip" data-text="Reclamações de atrasos em pagamentos no homebanking">(hb-payment-delay) </p>
-                <p class="selectFinal tooltip" data-text="Quando o cliente questiona o valor recebido na transferência, dizendo que está errado">(hb-receivables-dispute) </p>
-                <p class="selectFinal tooltip" data-text="Informações gerais de recebimento no homebanking">(hb-receivables-informations) </p>
-                <p class="selectFinal tooltip" data-text="Duvidas sobre recebiveis em BRLC ou Homebanking">(homebank-receivables) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação de entrada no homebanking">(opt-in-request) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação de remoção do homebanking">(opt-out-request) </p>
-              </div>
-              <div class="tagTableSub">
+               </div>
+              <div class="tagTableSub" data-drop-withdraws-monitoring>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(monitoring)"> MONITORING </h3>
-                <p class="selectFinal tooltip" data-text="Informações sobre bloqueio de 3 dias para análise de vendas atípicas">(3-day-withdraw-blocked) </p>
-                <p class="selectFinal tooltip" data-text="Cliente que insiste após passarmos as informações sobre bloqueio de 3 dias para análise de vendas atípicas.">(3-day-withdraw-blocked-insist) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação de detalhes do estabelecimento para validação de negócio.">(business-validation-information) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre bloqueio de conta de cardholder."> (cardholder-blocked)</p>
-                <p class="selectFinal tooltip" data-text="Explicação bloqueio de CardHolder."> (cardholder-blocked-reason)</p>
-                <p class="selectFinal tooltip" data-text="EC bloqueado que insiste após já termos explicado o motivo do bloqueio do cadastro.">(merchant-blocked-insist) </p>
-                <p class="selectFinal tooltip" data-text="EC bloqueado que continua insistindo por informações">(merchant-blocked-insist-2) </p>
-                <p class="selectFinal tooltip" data-text="Quando encerramos o contato após insistência no mesmo assunto pelo EC">(merchant-blocked-shutdown) </p>
-                <p class="selectFinal tooltip" data-text="Atendimento sendo encaminhado para monitoring"> (transfer-monitoring)</p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Requisição de documentos">(UNICO-doc-request) </p>
-                <p class="selectFinal tooltip" data-text="Instruções para resolução de tela travada durante validação da UNICO">(UNICO-loading-loop) </p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Quando aprovamos um EC por validação manual">(UNICO-manual-validation-approved) </p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Quando negamos um EC por validação manual">(UNICO-manual-validation-denied) </p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Validação manual iniciada"> (UNICO-manual-validation-ok)</p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Reagendamento de meet UNICO"> (UNICO-reschedule)</p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) RL divergente">(UNICO-RL-divergent) </p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Validação agendada">(UNICO-scheduled) </p>
-                <p class="selectFinal tooltip" data-text="Instruções para validação de identidade da UNICO que temos no app"> (UNICO-validation)</p>
-                <p class="selectFinal tooltip" data-text="Atendimento sendo encaminhado para fila de UNICO denied">(UNICO-validation-denied) </p>
-                <p class="selectFinal tooltip" data-text="Reenvio de link de validação da UNICO"> (UNICO-validation-resent)</p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Validação reenviada com EC approved"> (UNICO-validation-resent-approved)</p>
-                <p class="selectFinal tooltip" data-text="Dicas para facilitar validação de identidade via UNICO">(UNICO-validation-tips) </p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Vídeo do meet da UNICO corretamente processado"> (UNICO-video-completed)</p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Aguardando agendamento">(UNICO-waiting-appointment) </p>
-                <p class="selectFinal tooltip" data-text="(Fila UNICO) Aguardando retorno do EC"> (UNICO-waiting-return)</p>
-                <p class="selectFinal tooltip" data-text="Questões referentes a recebimentos e antecipação">(withdraw-locked-business-validation) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre bloqueio de recebíveis e respaldo contratual para o mesmo">(withdraw-locked-cardholder) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre bloqueio de recebíveis e respaldo contratual para o mesmo"> (withdraw-locked-information)</p>
-              </div>
-              <div class="tagTableSub">
+                </div>
+              <div class="tagTableSub" data-drop-withdraws-pix>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(pix)"> PIX </h3>
-                <p class="selectFinal tooltip" data-text="Dúvidas gerais sobre BRLC, exceto sobre como fazer transferência">(brlc-informations) </p>
-                <p class="selectFinal tooltip" data-text="Dúvida sobre como realizar transferência de BRLC">(brlc-transfer-guide) </p>
-                <p class="selectFinal tooltip" data-text="Dúvidas sobre uma transferência de BRLC">(brlc-transfer-informations) </p>
-                <p class="selectFinal tooltip" data-text="Cliente pede orientações sobre como fazer um Pix para a InfiniteWallet">(pix-cashin-guide) </p>
-                <p class="selectFinal tooltip" data-text="Questões envolvendo recibo de transações Pix">(pix-receipt) </p>
               </div>
-              <div class="tagTableSub">
+              <div class="tagTableSub" data-drop-withdraws-receivables>
                 <h3 class="selectTop tooltip" data-text="(withdraws)(receivables)"> RECEIVABLES </h3>
-                <p class="selectFinal tooltip" data-text="Para casos de vendas do dia 23/10 (instabilidade) que não aparecem no CRM">(analise_casos_20221023) </p>
-                <p class="selectFinal tooltip" data-text="Explicação do programa PEAC Maquininhas.">(cerc-peac) </p>
-                <p class="selectFinal tooltip" data-text="Instabilidade na liquidação de recebíveis por problemas na CIP."> (cip)</p>
-                <p class="selectFinal tooltip" data-text="Explicação do que é a CIP.">(cip-explanation) </p>
-                <p class="selectFinal tooltip" data-text="Transferência para conta PF">(cpf-account-transfer) </p>
-                <p class="selectFinal tooltip" data-text="cliente com dúvidas sobre funcionamento geral do programa d+0 de antecipação">(d0-information) </p>
-                <p class="selectFinal tooltip" data-text="cliente interessado em aderir ao programa d+0 de antecipação">(d0-interested) </p>
-                <p class="selectFinal tooltip" data-text="quando o cliente reclama na demora dos pagamentos, mas que é resolvido em pouco tempo. Pode ser algo de risco, erro geral ou falha de pagamento"> (d0-payment-delay)</p>
-                <p class="selectFinal tooltip" data-text="Instabilidade na liquidação de recebíveis por problemas internos">(d0-payment-instability) </p>
-                <p class="selectFinal tooltip" data-text="Cliente interessado em aderir ao programa de não antecipação">(d30-information) </p>
-                <p class="selectFinal tooltip" data-text="Cliente interessado em aderir ao programa de não antecipação">(d30-interested) </p>
-                <p class="selectFinal tooltip" data-text="Quando o cliente reclama na demora dos pagamentos, mas que é resolvido em pouco tempo. Pode ser algo de risco, erro geral ou falha de pagamento">(payment-delay) </p>
-                <p class="selectFinal tooltip" data-text="Pagamento em atraso que consta com erro em nosso sistema devido a questões externas (falha do banco)"> (payment-delayed-error)</p>
-                <p class="selectFinal tooltip" data-text="Pagamento em atraso que consta com erro em nosso sistema devido a questões internas (falha da CW)">(payment-delayed-error-cw) </p>
-                <p class="selectFinal tooltip" data-text="Pagamentos em atraso que ainda não tem transfer gerada, mas aparecem como 'To be made available today'">(payment-delayed-in-transfer) </p>
-                <p class="selectFinal tooltip" data-text="Pagamento em atraso que consta como pendente em nosso sistema">(payment-delayed-pending) </p>
-                <p class="selectFinal tooltip" data-text="Pagamento em atraso que consta como sucesso em nosso sistema">(payment-delayed-success) </p>
-                <p class="selectFinal tooltip" data-text="Instabilidade na liquidação de recebíveis por problemas internos"> (payment-instability)</p>
-                <p class="selectFinal tooltip" data-text="Quando o cliente solicita pagamentos mais cedo, reclamando do horário padrão">(payment-time) </p>
-                <p class="selectFinal tooltip" data-text="Quando o cliente questiona o valor recebido na transferência, dizendo que está errado">(receivables-dispute)  </p>
-                <p class="selectFinal tooltip" data-text="Informações gerais sobre os valores de recebimento.">(receivables-informations) </p>
-                <p class="selectFinal tooltip" data-text="Para casos onde o EC está recebendo seus valores via TED">(receiving-via-ted) </p>
-                <p class="selectFinal tooltip" data-text="Informações sobre o pagamento de bônus pelo programa de indicação">(referral-program) </p>
-                <p class="selectFinal tooltip" data-text="Explicação do modelo de pagamento fracionado">(split-payment) </p>
-                <p class="selectFinal tooltip" data-text="Para erros ao antecipar vendas pelo app"> (spot-anticipation)</p>
-                <p class="selectFinal tooltip" data-text="Para atendimentos gerais relacionados ao Spot anticipation">(spot-anticipation-error) </p>
-                <p class="selectFinal tooltip" data-text="Informações gerais do Spot Anticipation">(spot-anticipation-informations) </p>
-                <p class="selectFinal tooltip" data-text="Para ECs que querem aderir ao Spot Anticipation"> (spot-anticipation-request)</p>
-                <p class="selectFinal tooltip" data-text="Quando o status da antecipação aparece como liquidado, mas não houve depósito referente">(spot-anticipation-status-error) </p>
-                <p class="selectFinal tooltip" data-text="Questionamentos relacionados à disponibilidade de valores/vendas para antecipação via Spot">(spot-anticipation-value-availability) </p>
               </div>
             </div>
             <!-- Standalone -->
             <div class="tableMain" id="standaloneTableMain">
-              <div class="tagTableSub">
+              <div class="tagTableSub"  data-drop-standalone>
                 <h3 class="selectTop tooltip" data-text="Tags sem área"> USE COM CUIDADO </h3>
-                <p class="selectFinal tooltip" data-text="Solicitação para que o aplicativo seja avaliado pelo EC, especificamente para a plataforma da AppStore.">(appstore-rating) </p>
-                <p class="selectFinal tooltip" data-text="Macro de teste para alguns squads">(fim-de-turno-teste) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação para que o aplicativo seja avaliado pelo EC, sem especificação da plataforma.">(general-rating) </p>
-                <p class="selectFinal tooltip" data-text="Solicitação para que o aplicativo seja avaliado pelo EC, especificamente para a plataforma da Google Play.">(googleplay-rating) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(address-exchg) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(DO-status) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(other-problems) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(P2-issues) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(pix) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(POS-Display) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(S920-issues) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(Wifi-Connection) </p>
-                <p class="selectFinal tooltip" data-text="Tag usada apenas aos Finais de semana, para analistas liberados">(internal-WF)(X990-issues) </p>
-                <p class="selectFinal tooltip" data-text="Use com cuidado! Tag para chats onde o EC não deixa o assunto/problema claro e não retorna">(no-subject) </p>
-                <p class="selectFinal tooltip" data-text="Erro de pagamento dia 12/09">(payment-error-sept-12) </p>
-                <p class="selectFinal tooltip" data-text="Para casos onde nosso EC loga na conta de Cardholder e não percebe, gerando problemas">(pj-in-ch-account) </p>
-                <p class="selectFinal tooltip" data-text="Tag de controle para teste no chat">(problem-solved) </p>
-                <p class="selectFinal tooltip" data-text="(Exclusivo do RA) Para finalizações de tickets do RA onde pedimos a avaliação">(ra-closure-evaluation) </p>
-                <p class="selectFinal tooltip" data-text="Tag especial de uso de outro time. Favor não usar">(risk-compliance) </p>
-                <p class="selectFinal tooltip" data-text="Dúvidas relacionadas ao time Myriads, de mídias">(social-media-inquiry)</p>
               </div>
             </div>
           </div>

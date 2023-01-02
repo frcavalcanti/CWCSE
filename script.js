@@ -230,20 +230,7 @@ for (let i=0; i < tagArea.length; i++) {
   };
 }
 
-// copy minor tag
-let tag = document.getElementById("tagNav").getElementsByClassName("selectFinal");
 
-for (let i=0; i < tag.length; i++) {
-  tag[i].onclick = function () {
-    chrome.tabs.query({active: true, currentWindow:true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {
-        tooltip: tag[i].innerHTML, // JSON key: value - tag[i].dataset.text for tooltip text
-      }), function(response) {
-        console.log(response.status)
-      }
-    })
-  };
-}
 
 // copy favorite and search tag
 let favAndSearchTag = document.getElementById("tagNav").getElementsByClassName("material-symbols-outlined");
@@ -451,7 +438,7 @@ thirtyDaysAgo = `${yyyyThirty}-${mmThirty}-${ddThirty}`; // for Untagged
 document.getElementById("warRoom").addEventListener("click", function() {
   document.getElementById("wrSquad").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/dashboard/466-warroom?calendar_start=${today}&calendar_end=${today}&squad=${wrSquad.value}`
+  let newURL = ''
   chrome.tabs.create({ url: newURL })
 })
 
@@ -460,7 +447,7 @@ document.getElementById("untagged").addEventListener("click", function() {
   document.getElementById("wrSquad").value;
   document.getElementById("qrEngineer").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/question/5234-chats-without-tags-de-atendimento?CALENDAR_START=${thirtyDaysAgo}&CALENDAR_END=${today}&ANALISTA=%25${qrEngineer.value}%25&SQUAD=%25${wrSquad.value}%25`
+  let newURL = ''
   chrome.tabs.create({ url: newURL })
 })
 
@@ -470,7 +457,7 @@ document.getElementById("pix").addEventListener("click", function() {
   document.getElementById("pixStart").value;
   document.getElementById("pixEnd").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/question/3430-get-btg-webhooks-from-document?ECDoc=${pixCNPJ.value}&CALENDAR_START=${pixStart.value}&CALENDAR_END=${pixEnd.value}`
+  let newURL = ''
   chrome.tabs.create({ url: newURL })
 })
 
@@ -478,13 +465,14 @@ document.getElementById("pix").addEventListener("click", function() {
 document.getElementById("cancel").addEventListener("click", function() {
   document.getElementById("cancelNSU").value;
   sessionStorage.getItem("key", "value");
-  let newURL = `https://metabase-dot-infinitepay-production.rj.r.appspot.com/question/6383-validacao-de-cancelamento-cw?nsu=${cancelNSU.value}`
+  let newURL = ''
   chrome.tabs.create({ url: newURL })
 });
 
+
 // Search
 let tagsJSON = []
-let url = 'https://frcavalcanti.github.io/CWCSE/tagDB.json'
+let url = 'https://fr-cavalcanti.github.io/LaserJSON/tagDB.json'
 
 const getTags = async () => {
   try {
@@ -497,7 +485,7 @@ const getTags = async () => {
       return a.tUniq.toLowerCase() > b.tUniq.toLowerCase() ? 1 : (a.tUniq === b.tUniq ? 0 : -1) ;
     }
     return a.mAreaT.toLowerCase() > b.mAreaT.toLowerCase() ? 1: -1;
-  });
+    });
 
   // Returns sorted data for JSON
     console.log(data)
@@ -513,7 +501,6 @@ const tagText = document.getElementById("tagText");
 const allClear = document.getElementById("clearBtn"); // X
 const tagCardTemplate = document.querySelector("[data-tag-template]");  // template
 const tagCardContainer = document.querySelector("[data-tag-cards-container]"); // container for all cards
-
 
 (async () => {
   const tagData = await getTags()
@@ -550,6 +537,117 @@ const tagCardContainer = document.querySelector("[data-tag-cards-container]"); /
       })
     }
   }
+
+  // Tags for dropdown menu
+  dropTags = tagData.map(dropJ => {
+    const dropCard = document.querySelector("[data-drop-template]").content.cloneNode(true).children[0]
+    const tUniq2 = dropCard.querySelector(".selectFinal")
+    const tTip2 = dropCard.querySelector("[data-text]")
+
+    //Accreditation
+    if (dropJ.mAreaT === "(accreditation)(accreditation)") {
+        document.querySelector("[data-drop-accreditation-accreditation]").append(dropCard);
+     } else if (dropJ.mAreaT === "(accreditation)(app)") {
+        document.querySelector("[data-drop-accreditation-app]").append(dropCard);
+      } else if (dropJ.mAreaT === "(accreditation)(bank-account)") {
+        document.querySelector("[data-drop-accreditation-bank-account]").append(dropCard);
+      } else if (dropJ.mAreaT === "(accreditation)(lgpd)") {
+        document.querySelector("[data-drop-accreditation-lgpd]").append(dropCard);
+      } else if (dropJ.mAreaT === "(accreditation)(logged-out)") {
+        document.querySelector("[data-drop-accreditation-logged-out]").append(dropCard);
+      } else if (dropJ.mAreaT === "(accreditation)(monitoring)") {
+        document.querySelector("[data-drop-accreditation-monitoring]").append(dropCard);
+      // Delivery
+      } else if (dropJ.mAreaT === "(delivery)(logistics)") {
+        document.querySelector("[data-drop-delivery-logistics]").append(dropCard);
+      // POS Doubt
+      } else if (dropJ.tUniq.includes('s920')) {
+        document.querySelector("[data-drop-pos-s920]").append(dropCard);
+      } else if (dropJ.mAreaT === "(pos-doubt)(pos)") {
+        document.querySelector("[data-drop-pos-pos]").append(dropCard);
+      } else if (dropJ.mAreaT === "(pos-doubt)(authorization)") {
+        document.querySelector("[data-drop-pos-authorization]").append(dropCard);
+      } else if (dropJ.mAreaT === "(pos-doubt)(pix)") {
+        document.querySelector("[data-drop-pos-pix]").append(dropCard);
+      } else if (dropJ.mAreaT === "(pos-doubt)(refund)") {
+        document.querySelector("[data-drop-pos-refund]").append(dropCard);
+      } else if (dropJ.mAreaT === "(pos-doubt)(sales)") {
+        document.querySelector("[data-drop-pos-sales]").append(dropCard);
+      // POS Doubt
+      } else if (dropJ.mAreaT === "(sales-error)(authorization)") {
+        document.querySelector("[data-drop-error-authorization]").append(dropCard);
+      } else if (dropJ.mAreaT === "(sales-error)(connection)") {
+        document.querySelector("[data-drop-error-connection]").append(dropCard);
+      } else if (dropJ.mAreaT === "(sales-error)(monitoring)") {
+        document.querySelector("[data-drop-error-monitoring]").append(dropCard);
+      } else if (dropJ.mAreaT === "(sales-error)(pos)") {
+        document.querySelector("[data-drop-error-pos]").append(dropCard);
+      } else if (dropJ.mAreaT === "(sales-error)(pix)") {
+        document.querySelector("[data-drop-error-pix]").append(dropCard);
+      //Services
+      } else if (dropJ.mAreaT === "(services)(app)") {
+        document.querySelector("[data-drop-services-app]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(churn)") {
+        document.querySelector("[data-drop-services-churn]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(dirf)") {
+        document.querySelector("[data-drop-services-dirf]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(ecommerce)") {
+        document.querySelector("[data-drop-services-ecommerce]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(fees)") {
+        document.querySelector("[data-drop-services-fees]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(infinitecard)") {
+        document.querySelector("[data-drop-services-infinitecard]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(informations)") {
+        document.querySelector("[data-drop-services-informations]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(lending)") {
+        document.querySelector("[data-drop-services-lending]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(phone-support)") {
+        document.querySelector("[data-drop-services-phone]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(receivables)") {
+        document.querySelector("[data-drop-services-receivables]").append(dropCard);
+      } else if (dropJ.mAreaT === "(services)(web)") {
+        document.querySelector("[data-drop-services-web]").append(dropCard);
+      //Withdraws
+      } else if (dropJ.mAreaT === "(withdraws)(cerc)") {
+        document.querySelector("[data-drop-withdraws-cerc]").append(dropCard);
+      } else if (dropJ.mAreaT === "(withdraws)(chargeback)") {
+        document.querySelector("[data-drop-withdraws-chargeback]").append(dropCard);
+      } else if (dropJ.mAreaT === "(withdraws)(collection)") {
+        document.querySelector("[data-drop-withdraws-collection]").append(dropCard);
+      } else if (dropJ.mAreaT === "(withdraws)(fees)") {
+        document.querySelector("[data-drop-withdraws-fees]").append(dropCard);
+      } else if (dropJ.mAreaT === "(withdraws)(homebanking)") {
+        document.querySelector("[data-drop-withdraws-homebanking]").append(dropCard);
+      } else if (dropJ.mAreaT === "(withdraws)(monitoring)") {
+        document.querySelector("[data-drop-withdraws-monitoring]").append(dropCard);
+      } else if (dropJ.mAreaT === "(withdraws)(pix)") {
+        document.querySelector("[data-drop-withdraws-pix]").append(dropCard);
+      } else if (dropJ.mAreaT === "(withdraws)(receivables)") {
+        document.querySelector("[data-drop-withdraws-receivables]").append(dropCard);
+      // Standalone
+      } else if (dropJ.mAreaT === "--") {
+        document.querySelector("[data-drop-standalone]").append(dropCard);
+      }
+
+    tUniq2.innerHTML = dropJ.tUniq
+    tTip2.dataset.text = dropJ.tTip
+    return { mAreaT2: dropJ.mAreaT, tUniq2: dropJ.tUniq, tTip2: dropJ.tTip }
+  })
+
+  // copy minor tag
+  let tag = document.getElementById("tagNav").getElementsByClassName("selectFinal");
+
+  for (let i=0; i < tag.length; i++) {
+    tag[i].onclick = function () {
+      chrome.tabs.query({active: true, currentWindow:true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {
+          tooltip: tag[i].innerHTML, // JSON key: value - tag[i].dataset.text for tooltip text
+        }), function(response) {
+          console.log(response.status)
+        }
+      })
+    };
+  }
 })()
 
 
@@ -575,5 +673,3 @@ searchInput.addEventListener("input", (e) => {
     })
   }
 })
-
-// https://docs.google.com/spreadsheets/d/1jxbEhZQ-xCCcC4OEMcBK2jWnIi6dc5J150Gjy9o2BIc/edit?usp=sharing
